@@ -24,21 +24,14 @@ module.exports = {
     'react/state-in-constructor': ['warn', 'never'],
     'react/style-prop-object': 'error',
     'react/jsx-key': 'warn',
-    'react/no-array-index-key': 'error',
+    'react/no-array-index-key': 'warn',
     'react/jsx-no-bind': [
       'warn',
       {
-        ignoreDOMComponents: true,
-        ignoreRefs: true,
+        allowArrowFunctions: true,
       },
     ],
     'react/jsx-curly-brace-presence': 'warn',
     'react/jsx-pascal-case': 'warn',
-    'react/jsx-props-no-spreading': [
-      'warn',
-      {
-        html: 'ignore',
-      },
-    ],
   },
 }
