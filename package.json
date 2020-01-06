@@ -1,0 +1,34 @@
+{
+  "name": "eslint-config-kit",
+  "version": "0.1.0",
+  "description": "A collection of useful eslint configs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risenforces/eslint-config-kit.git"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "kit",
+    "node",
+    "react",
+    "typescript",
+    "ts",
+    "prettier"
+  ],
+  "author": "risenforces",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/risenforces/eslint-config-kit/issues"
+  },
+  "homepage": "https://github.com/risenforces/eslint-config-kit#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  },
+  "peerDependencies": {
+    "eslint": "^5.16.0 || ^6.7.2",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
