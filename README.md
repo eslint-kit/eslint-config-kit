@@ -26,6 +26,7 @@ Here is the example for TypeScript React project:
 
 - [Installation](#installation)
 - [Configs](#configs)
+- [Advanced Usage](#advanced-usage)
 
 ### Installation
 
@@ -194,3 +195,7 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
    ```
 
 </details>
+
+### Advanced Usage
+
+If the standard configs do not suit you, just override the needed options.
