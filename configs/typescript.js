@@ -1,8 +1,10 @@
 var extensions = require('../constants/extensions')
 
 module.exports = {
-  parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
   settings: {
     'import/extensions': extensions.ts,
     'import/resolver': {
