@@ -28,6 +28,7 @@ Here is the example for TypeScript React project:
 
 - [Installation](#installation)
 - [Configs](#configs)
+- [Config packs](#config-packs)
 - [Troubleshooting](#troubleshooting)
 - [Advanced Usage](#advanced-usage)
 
@@ -85,7 +86,7 @@ Installation:
 
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
-2. Extend from `react` config and specify parser:
+2. Extend from `react` config and specify a parser:
    ```diff
    {
    + "parser": "babel-eslint",
@@ -184,7 +185,7 @@ Installation:
    npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
    ```
 
-2. Extend from `typescript` config and specify parser:
+2. Extend from `typescript` config and specify a parser:
    ```diff
    {
    + "parser": "@typescript-eslint/parser",
@@ -233,6 +234,71 @@ Installation:
      "trailingComma": "all",
      "endOfLine": "lf"
    } 
+   ```
+
+</details>
+
+### Config packs
+
+Config packs are just shortcuts for the most used config combinations.
+
+<details>
+<summary><b>React</b></summary>
+
+Includes:
+
+- `react`
+- `react-hooks`
+
+Installation:
+
+1. Install dependencies:
+   ```sh
+   npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks
+   ```
+
+   **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
+
+2. Extend from `packs/react` config and specify a parser:
+   ```diff
+   {
+   + "parser": "babel-eslint",
+     "extends": [
+       "kit/base",
+   +   "packs/react"
+     ]
+   }
+   ```
+
+</details>
+
+<details>
+<summary><b>React-TypeScript</b></summary>
+
+Includes:
+
+- `react`
+- `react-hooks`
+- `typescript`
+
+Installation:
+
+1. Install dependencies:
+   ```sh
+   npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
+   ```
+
+   **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
+
+2. Extend from `packs/react-typescript` config and specify a parser:
+   ```diff
+   {
+   + "parser": "@typescript-eslint/parser",
+     "extends": [
+       "kit/base",
+   +   "packs/react-typescript"
+     ]
+   }
    ```
 
 </details>
