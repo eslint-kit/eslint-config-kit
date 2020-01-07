@@ -167,7 +167,7 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
 
 1. Install dependencies:
    ```sh
-   npm i -D eslint-plugin-prettier
+   npm i -D prettier eslint-plugin-prettier
    ```
 
 2. Extend from `prettier` config:
