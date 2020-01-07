@@ -28,6 +28,7 @@ Here is the example for TypeScript React project:
 
 - [Installation](#installation)
 - [Configs](#configs)
+- [Troubleshooting](#troubleshooting)
 - [Advanced Usage](#advanced-usage)
 
 ### Installation
@@ -60,9 +61,10 @@ Here is the example for TypeScript React project:
 
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
-2. Extend from `react` config:
+2. Extend from `react` config and specify parser:
    ```diff
    {
+   + parser: 'babel-eslint',
      extends: [
       'kit/base',
    +  'kit/react'
@@ -88,6 +90,7 @@ Differences with `react` config:
 2. Extend from `react/performant` config (or replace `react` config with it):
    ```diff
    {
+     parser: 'babel-eslint',
      extends: [
       'kit/base',
    -  'kit/react',
@@ -113,6 +116,7 @@ Differences with `react` config:
 3. Extend from `react-hooks` config:
    ```diff
    {
+     parser: 'babel-eslint',
      extends: [
       'kit/base',
       'kit/react',
@@ -148,9 +152,10 @@ This config just enables the `node` env, it doesn't add any rules.
    npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
    ```
 
-2. Extend from `typescript` config:
+2. Extend from `typescript` config and specify parser:
    ```diff
    {
+   + parser: '@typescript-eslint/parser',
      extends: [
       'kit/base',
    +  'kit/typescript'
@@ -195,6 +200,47 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
      "endOfLine": "lf"
    } 
    ```
+
+</details>
+
+### Troubleshooting
+
+<details>
+<summary><b>TypeScript config issues</b></summary>
+
+**Issue:** You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser.
+
+**Solution:** You should specify your tsconfig location manually in `parserOptions`:
+
+```diff
+{
+  parser: '@typescript-eslint/parser',
++ parserOptions: {
++   project: './tsconfig.json'
++ },
+  extends: [
+    'kit/base',
+    'kit/typescript'
+  ]
+}
+```
+
+If it doesn't work, try to rename eslint config file to `.eslintrc.js` and resolve `tsconfig.json` path:
+
+```js
+const path = require('path')
+
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: path.resolve(__dirname, './tsconfig.json') // or your tsconfig location
+  },
+  extends: [
+    'kit/base',
+    'kit/typescript'
+  ]
+}
+```
 
 </details>
 
