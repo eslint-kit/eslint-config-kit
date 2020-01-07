@@ -1,8 +1,6 @@
-<p align="center">
+<p align="center" style="margin-bottom: 0">
   <img src="./logo.png" alt="ESLint Config Kit" />
 </p>
-
-<br>
 
 ---
 
