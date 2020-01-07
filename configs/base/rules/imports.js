@@ -67,7 +67,7 @@ module.exports = {
       'warn',
       {
         groups: [
-          ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          'builtin', 'external', 'internal', 'parent', 'sibling', 'index',
         ],
         pathGroups: [
           {
