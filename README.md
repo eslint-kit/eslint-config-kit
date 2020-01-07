@@ -15,11 +15,11 @@ Here is the example for TypeScript React project:
 
 ```js
 {
-  extends: [
-    'kit/base',
-    'kit/typescript',
-    'kit/react',
-    'kit/react-hooks'
+  "extends": [
+    "kit/base",
+    "kit/typescript",
+    "kit/react",
+    "kit/react-hooks"
   ]
 }
 ```
@@ -43,7 +43,7 @@ Here is the example for TypeScript React project:
 3. Extend from `base` config:
    ```js
    {
-     extends: ['kit/base']
+     "extends": ["kit/base"]
    }
    ```
 
@@ -64,10 +64,10 @@ Here is the example for TypeScript React project:
 2. Extend from `react` config and specify parser:
    ```diff
    {
-   + parser: 'babel-eslint',
-     extends: [
-      'kit/base',
-   +  'kit/react'
+   + "parser": "babel-eslint",
+     "extends": [
+       "kit/base",
+   +   "kit/react"
      ]
    }
    ```
@@ -90,11 +90,11 @@ Differences with `react` config:
 2. Extend from `react/performant` config (or replace `react` config with it):
    ```diff
    {
-     parser: 'babel-eslint',
-     extends: [
-      'kit/base',
-   -  'kit/react',
-   +  'kit/react/performant'
+     "parser": "babel-eslint",
+     "extends": [
+       "kit/base",
+   -   "kit/react"
+   +   "kit/react/performant"
      ]
    }
    ```
@@ -116,11 +116,11 @@ Differences with `react` config:
 3. Extend from `react-hooks` config:
    ```diff
    {
-     parser: 'babel-eslint',
-     extends: [
-      'kit/base',
-      'kit/react',
-   +  'kit/react-hooks'
+     "parser": "babel-eslint",
+     "extends": [
+       "kit/base",
+       "kit/react",
+   +   "kit/react-hooks"
      ]
    }
    ```
@@ -135,9 +135,9 @@ This config just enables the `node` env, it doesn't add any rules.
 1. Extend from `node` config:
    ```diff
    {
-     extends: [
-      'kit/base',
-   +  'kit/node'
+     "extends": [
+       "kit/base",
+   +   "kit/node"
      ]
    }
    ```
@@ -155,10 +155,10 @@ This config just enables the `node` env, it doesn't add any rules.
 2. Extend from `typescript` config and specify parser:
    ```diff
    {
-   + parser: '@typescript-eslint/parser',
-     extends: [
-      'kit/base',
-   +  'kit/typescript'
+   + "parser": "@typescript-eslint/parser",
+     "extends": [
+       "kit/base",
+   +   "kit/typescript"
      ]
    }
    ```
@@ -180,9 +180,9 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
 2. Extend from `prettier` config:
    ```diff
    {
-     extends: [
-      'kit/base',
-   +  'kit/prettier'
+     "extends": [
+       "kit/base",
+   +   "kit/prettier"
      ]
    }
    ```
@@ -214,13 +214,13 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
 
 ```diff
 {
-  parser: '@typescript-eslint/parser',
-+ parserOptions: {
-+   project: './tsconfig.json'
+  "parser": "@typescript-eslint/parser",
++ "parserOptions": {
++   "project": "./tsconfig.json"
 + },
-  extends: [
-    'kit/base',
-    'kit/typescript'
+  "extends": [
+    "kit/base",
+    "kit/typescript"
   ]
 }
 ```
