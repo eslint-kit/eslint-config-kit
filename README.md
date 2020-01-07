@@ -39,7 +39,7 @@ Here is the example for TypeScript React project:
 
 2. Create `.eslintrc` file in the root of your project.
 
-3. Extend the `base` config:
+3. Extend from `base` config:
    ```js
    {
      extends: ['kit/base']
