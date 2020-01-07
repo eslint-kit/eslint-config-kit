@@ -17,9 +17,7 @@ Here is the example for TypeScript React project:
 {
   "extends": [
     "kit/base",
-    "kit/typescript",
-    "kit/react",
-    "kit/react-hooks"
+    "kit/packs/react-typescript"
   ]
 }
 ```
@@ -50,7 +48,7 @@ Here is the example for TypeScript React project:
    }
    ```
 
-4. To use other configs, follow the instructions in [Configs section](#configs).
+4. To use other configs, follow the instructions in [Configs](#configs) or [Config packs](#config-packs) sections.
 
 ### Configs
 
