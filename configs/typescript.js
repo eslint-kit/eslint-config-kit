@@ -1,4 +1,5 @@
 var extensions = require('../constants/extensions')
+var importsConfig = require('./base/rules/imports')
 
 module.exports = {
   plugins: ['@typescript-eslint'],
@@ -6,16 +7,16 @@ module.exports = {
     project: './tsconfig.json',
   },
   settings: {
-    'import/extensions': extensions.ts,
+    'import/extensions': extensions.jsAndTs,
     'import/resolver': {
       node: {
-        extensions: extensions.ts,
+        extensions: extensions.jsAndTs,
       },
     },
     'import/ignore': ['\\.(coffee|scss|css|less|hbs|svg|json)$'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     'import/parsers': {
-      '@typescript-eslint/parser': extensions.tsExclusive,
+      '@typescript-eslint/parser': extensions.ts,
     },
   },
   rules: {
@@ -70,6 +71,16 @@ module.exports = {
     'no-return-await': 'off',
     '@typescript-eslint/return-await': ['error', 'in-try-catch'],
     '@typescript-eslint/triple-slash-reference': 'error',
+
+    // redefine some import plugin rules
+    'import/extensions': importsConfig.rules['import/extensions']
+      .slice(0, 2)
+      .concat(
+        extensions.jsAndTs.reduce(function(acc, ext) {
+          acc[ext] = 'never'
+          return acc
+        }, {}),
+      ),
   },
   overrides: [
     {
