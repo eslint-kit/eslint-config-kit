@@ -61,7 +61,7 @@ Here is the example for TypeScript React project:
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
 2. Extend from `react` config:
-   ```js
+   ```diff
    {
      extends: [
       'kit/base',
@@ -86,7 +86,7 @@ Differences with `react` config:
 1. Install `react` config dependencies.
 
 2. Extend from `react/performant` config (or replace `react` config with it):
-   ```js
+   ```diff
    {
      extends: [
       'kit/base',
@@ -111,7 +111,7 @@ Differences with `react` config:
    ```
 
 3. Extend from `react-hooks` config:
-   ```js
+   ```diff
    {
      extends: [
       'kit/base',
@@ -129,7 +129,7 @@ Differences with `react` config:
 This config just enables the `node` env, it doesn't add any rules.
 
 1. Extend from `node` config:
-   ```js
+   ```diff
    {
      extends: [
       'kit/base',
@@ -143,15 +143,13 @@ This config just enables the `node` env, it doesn't add any rules.
 <details>
 <summary><b>TypeScript</b></summary>
 
-This config just enables the `node` env, it doesn't add any rules.
-
 1. Install dependencies:
    ```sh
-   npm i -D @typescript-eslint/parser @typescript-eslint/eslint-config
+   npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
    ```
 
 2. Extend from `typescript` config:
-   ```js
+   ```diff
    {
      extends: [
       'kit/base',
@@ -159,6 +157,8 @@ This config just enables the `node` env, it doesn't add any rules.
      ]
    }
    ```
+
+   **Note:** It should be placed **under** any other config. Otherwise, wrong parser may be applied.
 
 </details>
 
@@ -173,7 +173,7 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
    ```
 
 2. Extend from `prettier` config:
-   ```js
+   ```diff
    {
      extends: [
       'kit/base',
