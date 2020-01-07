@@ -1,5 +1,5 @@
 <p align="center" style="margin-bottom: 0">
-  <img src="./logo.png" alt="ESLint Config Kit" />
+  <img src="https://user-images.githubusercontent.com/35740512/71934637-c8b22a00-319c-11ea-8b73-a48e7851b7d2.png" alt="ESLint Config Kit" />
 </p>
 
 ---
