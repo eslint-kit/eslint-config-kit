@@ -7,7 +7,7 @@
 ---
 > :warning: **The package is still in development**
 
-ESLint Config Kit is a collection of useful ESLint configs for much more convenient project maintaining. It use only the necessary rules to provide error checking and readability improving. Nothing extra included.
+ESLint Config Kit is a collection of useful ESLint configs for much more convenient project maintaining. It uses only the necessary rules to provide error checking and readability improving. Nothing extra included.
 
 Configs divided into `base` and technology-specific parts, which can be used in "modular" style.
 
