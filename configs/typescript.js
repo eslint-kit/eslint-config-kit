@@ -77,7 +77,7 @@ module.exports = {
       .slice(0, 2)
       .concat(
         extensions.jsAndTs.reduce(function(acc, ext) {
-          acc[ext] = 'never'
+          acc[ext.slice(1)] = 'never'
           return acc
         }, {}),
       ),
