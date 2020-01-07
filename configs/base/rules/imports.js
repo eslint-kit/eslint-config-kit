@@ -67,39 +67,12 @@ module.exports = {
       'warn',
       {
         groups: [
-          'builtin', 'external', 'internal', 'parent', 'sibling', 'index',
-        ],
-        pathGroups: [
-          {
-            pattern: '@app/**',
-            group: 'external',
-            position: 'after',
-          },
-          {
-            pattern: '@/**',
-            group: 'external',
-            position: 'after',
-          },
-          {
-            pattern: '~app/**',
-            group: 'external',
-            position: 'after',
-          },
-          {
-            pattern: '~/**',
-            group: 'external',
-            position: 'after',
-          },
-          {
-            pattern: '#app/**',
-            group: 'external',
-            position: 'after',
-          },
-          {
-            pattern: '#/**',
-            group: 'external',
-            position: 'after',
-          },
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
         ],
       },
     ],
