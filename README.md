@@ -262,7 +262,7 @@ Installation:
    + "parser": "babel-eslint",
      "extends": [
        "kit/base",
-   +   "packs/react"
+   +   "kit/packs/react"
      ]
    }
    ```
@@ -293,7 +293,7 @@ Installation:
    + "parser": "@typescript-eslint/parser",
      "extends": [
        "kit/base",
-   +   "packs/react-typescript"
+   +   "kit/packs/react-typescript"
      ]
    }
    ```
