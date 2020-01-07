@@ -89,6 +89,7 @@ module.exports = {
     'no-undef': 'error',
     'no-undef-init': 'warn',
     'no-unused-vars': 'warn',
+    'no-use-before-define': 'error',
 
     // eslint stylistic rules
     'lines-between-class-members': [
@@ -120,6 +121,7 @@ module.exports = {
     'prefer-arrow-callback': 'warn',
     'prefer-const': 'warn',
     'prefer-rest-params': 'warn',
+    'prefer-spread': 'warn',
     'require-yield': 'error',
   },
 }
