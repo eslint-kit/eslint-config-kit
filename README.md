@@ -52,7 +52,31 @@ Here is the example for TypeScript React project:
 ### Configs
 
 <details>
+<summary><b>Base (soft)</b></summary>
+
+Differences with `base` config:
+
+- Allow to use `console.log`.  
+- Allow to make default exports.  
+
+Installation:
+
+1. Replace `base` with `base/soft`:
+   ```diff
+   {
+     "extends": [
+   -   "kit/base",
+   +   "kit/base/soft"
+     ]
+   }
+   ```
+
+</details>
+
+<details>
 <summary><b>React</b></summary>
+
+Installation:
 
 1. Install dependencies:
    ```sh
@@ -81,9 +105,11 @@ Here is the example for TypeScript React project:
 
 Differences with `react` config:
 
-- Disallow using the array indexes for `key` prop.
+- Disallow to use the array indexes for `key` prop.
 - Disallow to use arrow functions in jsx, except for DOM components like `button`.
 - Disallow to use props spreading (`{...props}`) in jsx, except for DOM components like `button`.
+
+Installation:
 
 1. Install `react` config dependencies.
 
@@ -105,6 +131,8 @@ Differences with `react` config:
 
 <details>
 <summary><b>React-Hooks</b></summary>
+
+Installation:
 
 1. Install `react` config.
 
@@ -132,6 +160,8 @@ Differences with `react` config:
 
 This config just enables the `node` env, it doesn't add any rules.
 
+Installation:
+
 1. Extend from `node` config:
    ```diff
    {
@@ -146,6 +176,8 @@ This config just enables the `node` env, it doesn't add any rules.
 
 <details>
 <summary><b>TypeScript</b></summary>
+
+Installation:
 
 1. Install dependencies:
    ```sh
@@ -171,6 +203,8 @@ This config just enables the `node` env, it doesn't add any rules.
 <summary><b>Prettier</b></summary>
 
 This config just enables the `prettier` plugin and adds `prettier/prettier` rule.
+
+Installation:
 
 1. Install dependencies:
    ```sh
