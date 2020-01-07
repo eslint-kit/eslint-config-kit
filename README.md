@@ -32,6 +32,7 @@ Here is the example for TypeScript React project:
 ### Installation
 
 1. Install the base dependencies:
+
    ```sh
    npm i -D eslint eslint-config-kit eslint-plugin-import
    ```
@@ -39,6 +40,7 @@ Here is the example for TypeScript React project:
 2. Create `.eslintrc` file in the root of your project.
 
 3. Extend from `base` config:
+
    ```js
    {
      "extends": ["kit/base"]
@@ -60,6 +62,7 @@ Differences with `base` config:
 Installation:
 
 1. Replace `base` with `base/soft`:
+
    ```diff
    {
      "extends": [
@@ -77,6 +80,7 @@ Installation:
 Installation:
 
 1. Install dependencies:
+
    ```sh
    npm i -D babel-eslint eslint-plugin-react
    ```
@@ -84,6 +88,7 @@ Installation:
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
 2. Extend from `react` config and specify a parser:
+
    ```diff
    {
    + "parser": "babel-eslint",
@@ -112,6 +117,7 @@ Installation:
 1. Install `react` config dependencies.
 
 2. Extend from `react/performant` config (or replace `react` config with it):
+
    ```diff
    {
      "parser": "babel-eslint",
@@ -135,11 +141,13 @@ Installation:
 1. Install `react` config.
 
 2. Install dependencies:
+
    ```sh
    npm i -D eslint-plugin-react-hooks
    ```
 
 3. Extend from `react-hooks` config:
+
    ```diff
    {
      "parser": "babel-eslint",
@@ -161,6 +169,7 @@ This config just enables the `node` env, it doesn't add any rules.
 Installation:
 
 1. Extend from `node` config:
+
    ```diff
    {
      "extends": [
@@ -178,11 +187,13 @@ Installation:
 Installation:
 
 1. Install dependencies:
+
    ```sh
    npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
    ```
 
 2. Extend from `typescript` config and specify a parser:
+
    ```diff
    {
    + "parser": "@typescript-eslint/parser",
@@ -205,11 +216,13 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
 Installation:
 
 1. Install dependencies:
+
    ```sh
    npm i -D prettier eslint-plugin-prettier
    ```
 
 2. Extend from `prettier` config:
+
    ```diff
    {
      "extends": [
@@ -222,6 +235,7 @@ Installation:
 3. Create `.prettierrc` file in the root of your project add specify your formatting settings.
 
 4. (optional) Use the recommended settings:
+
    ```js
    {
      "semi": false,
@@ -250,6 +264,7 @@ Includes:
 Installation:
 
 1. Install dependencies:
+
    ```sh
    npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks
    ```
@@ -257,6 +272,7 @@ Installation:
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
 2. Extend from `packs/react` config and specify a parser:
+
    ```diff
    {
    + "parser": "babel-eslint",
@@ -281,13 +297,15 @@ Includes:
 Installation:
 
 1. Install dependencies:
+
    ```sh
-   npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
+   npm i -D eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
    ```
 
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
 2. Extend from `packs/react-typescript` config and specify a parser:
+
    ```diff
    {
    + "parser": "@typescript-eslint/parser",
