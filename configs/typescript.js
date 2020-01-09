@@ -30,19 +30,19 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'warn',
     '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
     '@typescript-eslint/explicit-function-return-type': 'warn',
-    '@typescript-eslint/member-delimiter-style': [
-      'warn',
-      {
-        multiline: {
-          delimiter: 'comma',
-          requireLast: true,
-        },
-        singleline: {
-          delimiter: 'comma',
-          requireLast: false,
-        },
-      },
-    ],
+    // '@typescript-eslint/member-delimiter-style': [
+    //   'warn',
+    //   {
+    //     multiline: {
+    //       delimiter: 'semi',
+    //       requireLast: true,
+    //     },
+    //     singleline: {
+    //       delimiter: 'semi',
+    //       requireLast: false,
+    //     },
+    //   },
+    // ],
     'no-array-constructor': 'off',
     '@typescript-eslint/no-array-constructor': 'warn',
     '@typescript-eslint/no-empty-interface': 'warn',
