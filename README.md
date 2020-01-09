@@ -245,7 +245,7 @@ Installation:
      "singleQuote": true,
      "tabWidth": 2,
      "quoteProps": "consistent",
-     "trailingComma": "all",
+     "trailingComma": "es5",
      "endOfLine": "lf"
    } 
    ```
