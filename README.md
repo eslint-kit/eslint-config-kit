@@ -207,8 +207,6 @@ Installation:
    }
    ```
 
-   **Note:** It should be placed **under** any other config. Otherwise, wrong parser may be applied.
-
 </details>
 
 <details>
