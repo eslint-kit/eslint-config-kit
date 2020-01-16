@@ -234,9 +234,13 @@ Installation:
 <details>
 <summary><b>TypeScript config issues</b></summary>
 
-**Issue:** You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser.
+## **Issue:**
 
-**Solution:** You should specify your tsconfig location manually in `parserOptions`:
+`You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser`.
+
+## **Solution:**
+
+You should specify your tsconfig location manually in `parserOptions`:
 
 ```diff
 {
