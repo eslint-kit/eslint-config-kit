@@ -88,7 +88,7 @@ Installation:
    npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks
    ```
 
-   **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
+   **Note:** `babel-eslint` requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
 2. Extend from `react` config and specify a parser:
 
@@ -237,8 +237,6 @@ Installation:
    ```sh
    npm i -D eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
    ```
-
-   **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
 2. Extend from `packs/react-typescript` config and specify a parser:
 
