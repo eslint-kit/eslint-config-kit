@@ -55,28 +55,6 @@ Here is the example for TypeScript React project:
 ### Configs
 
 <details>
-<summary><b>Base (soft)</b></summary>
-
-Differences with `base` config:
-
-- Allow to use `console.log`.  
-
-Installation:
-
-1. Replace `base` with `base/soft`:
-
-   ```diff
-   {
-     "extends": [
-   -   "kit/base",
-   +   "kit/base/soft"
-     ]
-   }
-   ```
-
-</details>
-
-<details>
 <summary><b>React</b></summary>
 
 Installation:

@@ -1,7 +1,6 @@
 it('should be successfully imported using require()', () => {
   const names = [
     'base',
-    'base/soft',
     'react',
     'react/performant',
     'prettier',
