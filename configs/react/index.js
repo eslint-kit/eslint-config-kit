@@ -7,6 +7,11 @@ module.exports = {
       jsx: true,
     },
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   plugins: ['react'],
   rules: {
     'react/jsx-uses-react': 'warn',
