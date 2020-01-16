@@ -85,7 +85,7 @@ Installation:
 1. Install dependencies:
 
    ```sh
-   npm i -D babel-eslint eslint-plugin-react
+   npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks
    ```
 
    **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
@@ -101,8 +101,6 @@ Installation:
      ]
    }
    ```
-
-3. Enable `react-hooks` config if you use hooks.
 
 </details>
 
@@ -128,36 +126,6 @@ Installation:
        "kit/base",
    -   "kit/react"
    +   "kit/react/performant"
-     ]
-   }
-   ```
-
-3. Enable `react-hooks` config if you use hooks.
-
-</details>
-
-<details>
-<summary><b>React-Hooks</b></summary>
-
-Installation:
-
-1. Install `react` config.
-
-2. Install dependencies:
-
-   ```sh
-   npm i -D eslint-plugin-react-hooks
-   ```
-
-3. Extend from `react-hooks` config:
-
-   ```diff
-   {
-     "parser": "babel-eslint",
-     "extends": [
-       "kit/base",
-       "kit/react",
-   +   "kit/react-hooks"
      ]
    }
    ```
@@ -255,44 +223,11 @@ Installation:
 Config packs are just shortcuts for the most used config combinations.
 
 <details>
-<summary><b>React</b></summary>
-
-Includes:
-
-- `react`
-- `react-hooks`
-
-Installation:
-
-1. Install dependencies:
-
-   ```sh
-   npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks
-   ```
-
-   **Note:** this config uses babel-eslint parser by default. It requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
-
-2. Extend from `packs/react` config and specify a parser:
-
-   ```diff
-   {
-   + "parser": "babel-eslint",
-     "extends": [
-       "kit/base",
-   +   "kit/packs/react"
-     ]
-   }
-   ```
-
-</details>
-
-<details>
 <summary><b>React-TypeScript</b></summary>
 
 Includes:
 
 - `react`
-- `react-hooks`
 - `typescript`
 
 Installation:

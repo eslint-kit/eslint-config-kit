@@ -12,7 +12,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react'],
+  plugins: ['react', 'react-hooks'],
   rules: {
     'react/jsx-uses-react': 'warn',
     'react/jsx-uses-vars': 'warn',
@@ -38,5 +38,9 @@ module.exports = {
     ],
     'react/jsx-curly-brace-presence': 'warn',
     'react/jsx-pascal-case': 'warn',
+
+    // hooks
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 }

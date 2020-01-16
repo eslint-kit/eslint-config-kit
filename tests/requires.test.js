@@ -4,11 +4,9 @@ it('should be successfully imported using require()', () => {
     'base/soft',
     'react',
     'react/performant',
-    'react-hooks',
     'prettier',
     'typescript',
     'node',
-    'packs/react',
     'packs/react-typescript',
   ]
 

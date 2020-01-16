@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['react', 'react-hooks', 'typescript']
+  extends: ['react', 'typescript']
     .map(function(path) {
       return '../configs/' + path
     })
