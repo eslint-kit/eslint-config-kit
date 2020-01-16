@@ -306,46 +306,46 @@ module.exports = {
 
 2. Update `.eslintrc` with your aliases:
 
-   ```diff
+   ```json
    {
-   + "settings": {
-   +   "import/resolver": {
-   +     "alias": {
-   +       "map": [
-   +         ["@folder-alias", "./src"],
-   +         ["@file-alias", "./src/App.js"]
-   +       ],
-   +       "extensions": [".js", ".jsx", ".json"]
-   +     }
-   +   }
-   + },
-   + "rules": {
-   +   "import/order": [
-   +     "warn",
-   +     {
-   +       "groups": [
-   +         "builtin",
-   +         "external",
-   +         "internal",
-   +         "parent",
-   +         "sibling",
-   +         "index"
-   +       ],
-   +       "pathGroups": [
-   +         {
-   +           "pattern": "@folder-alias/**",
-   +           "group": "internal",
-   +           "position": "before"
-   +         },
-   +         {
-   +           "pattern": "@file-alias",
-   +           "group": "internal",
-   +           "position": "before"
-   +         }
-   +       ]
-   +     }
-   +   ]
-   + }
+     "settings": {
+       "import/resolver": {
+         "alias": {
+           "map": [
+             ["@folder-alias", "./src"],
+             ["@file-alias", "./src/App.js"]
+           ],
+           "extensions": [".js", ".jsx", ".json"]
+         }
+       }
+     },
+     "rules": {
+       "import/order": [
+         "warn",
+         {
+           "groups": [
+             "builtin",
+             "external",
+             "internal",
+             "parent",
+             "sibling",
+             "index"
+           ],
+           "pathGroups": [
+             {
+               "pattern": "@folder-alias/**",
+               "group": "internal",
+               "position": "before"
+             },
+             {
+               "pattern": "@file-alias",
+               "group": "internal",
+               "position": "before"
+             }
+           ]
+         }
+       ]
+     }
    }
    ```
 
