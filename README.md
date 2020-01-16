@@ -295,4 +295,60 @@ module.exports = {
 
 ### Advanced Usage
 
-If the standard configs do not suit you, just override the needed options.
+<details>
+<summary><b>Add aliases to `import` plugin</b></summary>
+
+1. Install dependencies:
+
+   ```sh
+   npm i -D eslint-import-resolver-alias
+   ```
+
+2. Update `.eslintrc` with your aliases:
+
+   ```diff
+   {
+   + "settings": {
+   +   "import/resolver": {
+   +     "alias": {
+   +       "map": [
+   +         ["@folder-alias", "./src"],
+   +         ["@file-alias", "./src/App.js"]
+   +       ],
+   +       "extensions": [".js", ".jsx", ".json"]
+   +     }
+   +   }
+   + },
+   + "rules": {
+   +   "import/order": [
+   +     "warn",
+   +     {
+   +       "groups": [
+   +         "builtin",
+   +         "external",
+   +         "internal",
+   +         "parent",
+   +         "sibling",
+   +         "index"
+   +       ],
+   +       "pathGroups": [
+   +         {
+   +           "pattern": "@folder-alias/**",
+   +           "group": "internal",
+   +           "position": "before"
+   +         },
+   +         {
+   +           "pattern": "@file-alias",
+   +           "group": "internal",
+   +           "position": "before"
+   +         }
+   +       ]
+   +     }
+   +   ]
+   + }
+   }
+   ```
+
+   **Note:** Add `.ts` and `.tsx` extensions to `import/resolver` settings if you use `TypeScript`.
+
+</details>
