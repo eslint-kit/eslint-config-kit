@@ -60,7 +60,6 @@ Here is the example for TypeScript React project:
 Differences with `base` config:
 
 - Allow to use `console.log`.  
-- Allow to make default exports.  
 
 Installation:
 

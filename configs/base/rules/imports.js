@@ -14,7 +14,12 @@ module.exports = {
   },
   rules: {
     'import/no-unresolved': ['error', { commonjs: true, caseSensitive: true }],
-    'import/no-default-export': 'error',
+    'import/no-anonymous-default-export': [
+      'error',
+      {
+        allowCallExpression: false,
+      },
+    ],
     'import/export': 'error',
     'import/no-extraneous-dependencies': [
       'error',
