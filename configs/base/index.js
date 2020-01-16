@@ -1,5 +1,8 @@
 module.exports = {
   extends: ['./rules/imports'].map(require.resolve),
+  env: {
+    es6: true,
+  },
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -42,7 +45,6 @@ module.exports = {
     // eslint best-practice rules
     'array-callback-return': 'error',
     'default-case': 'error',
-    'default-param-last': 'error',
     'dot-notation': 'warn',
     'eqeqeq': ['error', 'smart'],
     'no-alert': 'warn',
@@ -63,7 +65,7 @@ module.exports = {
     'no-new-wrappers': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
-    'no-param-reassign': ['error', { props: true }],
+    'no-param-reassign': ['warn', { props: false }],
     'no-proto': 'error',
     'no-redeclare': 'error',
     'no-return-assign': 'warn',
