@@ -29,8 +29,8 @@ Here is the example for TypeScript React project:
 - [Installation](#installation)
 - [Configs](#configs)
 - [Config packs](#config-packs)
-- [Troubleshooting](#troubleshooting)
 - [Advanced Usage](#advanced-usage)
+- [Troubleshooting](#troubleshooting)
 
 ### Installation
 
@@ -229,51 +229,6 @@ Installation:
 
 </details>
 
-### Troubleshooting
-
-<details>
-<summary><b>TypeScript config issues</b></summary>
-
-## **Issue:**
-
-`You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser`.
-
-## **Solution:**
-
-You should specify your tsconfig location manually in `parserOptions`:
-
-```diff
-{
-  "parser": "@typescript-eslint/parser",
-+ "parserOptions": {
-+   "project": "./tsconfig.json"
-+ },
-  "extends": [
-    "kit/base",
-    "kit/typescript"
-  ]
-}
-```
-
-If it doesn't work, try to rename eslint config file to `.eslintrc.js` and resolve `tsconfig.json` path:
-
-```js
-const path = require('path')
-
-module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: path.resolve(__dirname, './tsconfig.json') // or your tsconfig location
-  },
-  extends: [
-    'kit/base',
-    'kit/typescript'
-  ]
-}
-```
-
-</details>
-
 ### Advanced Usage
 
 <details>
@@ -386,5 +341,50 @@ module.exports = {
    ```
    
    **Note:** See [eslint-import-resolver-typescript README](https://github.com/alexgorbatchev/eslint-import-resolver-typescript) for the details.
+
+</details>
+
+### Troubleshooting
+
+<details>
+<summary><b>TypeScript config issues</b></summary>
+
+## **Issue:**
+
+`You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser`.
+
+## **Solution:**
+
+You should specify your tsconfig location manually in `parserOptions`:
+
+```diff
+{
+  "parser": "@typescript-eslint/parser",
++ "parserOptions": {
++   "project": "./tsconfig.json"
++ },
+  "extends": [
+    "kit/base",
+    "kit/typescript"
+  ]
+}
+```
+
+If it doesn't work, try to rename eslint config file to `.eslintrc.js` and resolve `tsconfig.json` path:
+
+```js
+const path = require('path')
+
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: path.resolve(__dirname, './tsconfig.json') // or your tsconfig location
+  },
+  extends: [
+    'kit/base',
+    'kit/typescript'
+  ]
+}
+```
 
 </details>
