@@ -277,7 +277,7 @@ module.exports = {
 ### Advanced Usage
 
 <details>
-<summary><b>Add aliases to `import` plugin</b></summary>
+<summary><b>Add aliases to import plugin (JavaScript)</b></summary>
 
 1. Install dependencies:
 
@@ -330,6 +330,61 @@ module.exports = {
    }
    ```
 
-   **Note:** Add `.ts` and `.tsx` extensions to `import/resolver` settings if you use `TypeScript`.
+</details>
+
+<details>
+<summary><b>Add aliases to import plugin (TypeScript)</b></summary>
+
+1. Install dependencies:
+
+   ```sh
+   npm i -D eslint-import-resolver-typescript
+   ```
+
+2. Update `.eslintrc`:
+
+   ```json
+   {
+     "settings": {
+       "import/parsers": {
+         "@typescript-eslint/parser": [".ts", ".tsx"]
+       },
+       "import/resolver": {
+         "typescript": {
+           "alwaysTryTypes": true
+         }
+       }
+     },
+     "rules": {
+       "import/order": [
+         "warn",
+         {
+           "groups": [
+             "builtin",
+             "external",
+             "internal",
+             "parent",
+             "sibling",
+             "index"
+           ],
+           "pathGroups": [
+             {
+               "pattern": "@folder-alias/**",
+               "group": "internal",
+               "position": "before"
+             },
+             {
+               "pattern": "@file-alias",
+               "group": "internal",
+               "position": "before"
+             }
+           ]
+         }
+       ]
+     }
+   }
+   ```
+   
+   **Note:** See [eslint-import-resolver-typescript README](https://github.com/alexgorbatchev/eslint-import-resolver-typescript) for the details.
 
 </details>
