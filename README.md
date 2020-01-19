@@ -33,7 +33,7 @@ Here is the example for TypeScript React project:
 - [Advanced Usage](#advanced-usage)
 - [Troubleshooting](#troubleshooting)
 
-### Installation
+## Installation
 
 1. Install the base dependencies:
 
@@ -55,7 +55,7 @@ Here is the example for TypeScript React project:
 
 5. _(optional)_ Integrate ESLint into your IDE/editor [here](#integrating-eslint-with-ideseditors). 
 
-### Configs
+## Configs
 
 > **Note:** Base config does not include any formatting rules. It is strongly recommended to use `prettier` config for this purposes. Just open `Prettier` section right below.
 
@@ -200,7 +200,7 @@ Installation:
 
 </details>
 
-### Config packs
+## Config packs
 
 Config packs are just shortcuts for the most used config combinations.
 
@@ -234,7 +234,7 @@ Installation:
 
 </details>
 
-### Integrating ESLint with IDEs/editors
+## Integrating ESLint with IDEs/editors
 
 <details>
 <summary><b>VSCode</b></summary>
@@ -264,7 +264,7 @@ Installation:
 
 </details>
 
-### Advanced Usage
+## Advanced Usage
 
 <details>
 <summary><b>Add aliases to import plugin (JavaScript)</b></summary>
@@ -379,16 +379,16 @@ Installation:
 
 </details>
 
-### Troubleshooting
+## Troubleshooting
 
 <details>
 <summary><b>TypeScript config issues</b></summary>
 
-## **Issue:**
+### **Issue:**
 
 `You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser`.
 
-## **Solution:**
+### **Solution:**
 
 You should specify your tsconfig location manually in `parserOptions`:
 
