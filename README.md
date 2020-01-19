@@ -29,6 +29,7 @@ Here is the example for TypeScript React project:
 - [Installation](#installation)
 - [Configs](#configs)
 - [Config packs](#config-packs)
+- [Integrating ESLint with IDEs/editors](#integrating-eslint-with-ides_editors)
 - [Advanced Usage](#advanced-usage)
 - [Troubleshooting](#troubleshooting)
 
@@ -50,9 +51,54 @@ Here is the example for TypeScript React project:
    }
    ```
 
-4. To use other configs, follow the instructions in [Configs](#configs) or [Config packs](#config-packs) sections.
+4. Add any desired configs [here](#configs) or [there](#config-packs).
+
+5. _(optional)_ Integrate ESLint into your IDE/editor [here](#integrating-eslint-with-ides_editors). 
 
 ### Configs
+
+> **Note:** Base config does not include any formatting rules. It is strongly recommended to use `prettier` config for this purposes. Just open `Prettier` section right below.
+
+<details>
+<summary><b>Prettier</b></summary>
+
+This config just enables the `prettier` plugin and adds `prettier/prettier` rule.
+
+Installation:
+
+1. Install dependencies:
+
+   ```sh
+   npm i -D prettier eslint-plugin-prettier
+   ```
+
+2. Extend from `prettier` config:
+
+   ```diff
+   {
+     "extends": [
+       "kit/base",
+   +   "kit/prettier"
+     ]
+   }
+   ```
+
+3. Create `.prettierrc` file in the root of your project add specify your formatting settings.
+
+4. _(optional)_ Use the recommended settings:
+
+   ```js
+   {
+     "semi": false,
+     "singleQuote": true,
+     "tabWidth": 2,
+     "quoteProps": "consistent",
+     "trailingComma": "es5",
+     "endOfLine": "lf"
+   } 
+   ```
+
+</details>
 
 <details>
 <summary><b>React</b></summary>
@@ -154,47 +200,6 @@ Installation:
 
 </details>
 
-<details>
-<summary><b>Prettier</b></summary>
-
-This config just enables the `prettier` plugin and adds `prettier/prettier` rule.
-
-Installation:
-
-1. Install dependencies:
-
-   ```sh
-   npm i -D prettier eslint-plugin-prettier
-   ```
-
-2. Extend from `prettier` config:
-
-   ```diff
-   {
-     "extends": [
-       "kit/base",
-   +   "kit/prettier"
-     ]
-   }
-   ```
-
-3. Create `.prettierrc` file in the root of your project add specify your formatting settings.
-
-4. (optional) Use the recommended settings:
-
-   ```js
-   {
-     "semi": false,
-     "singleQuote": true,
-     "tabWidth": 2,
-     "quoteProps": "consistent",
-     "trailingComma": "es5",
-     "endOfLine": "lf"
-   } 
-   ```
-
-</details>
-
 ### Config packs
 
 Config packs are just shortcuts for the most used config combinations.
@@ -226,6 +231,36 @@ Installation:
      ]
    }
    ```
+
+</details>
+
+### Integrating ESLint with IDEs/editors
+
+<details>
+<summary><b>VSCode</b></summary>
+
+1. Install [ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+2. Choose any option you like:
+
+   - **Fix on save.**  
+     Add the following to your VSCode `settings.json`:  
+
+     ```js
+     "editor.codeActionsOnSave": {
+       "source.fixAll.eslint": true
+     }
+     ```
+
+   - **Fix on keyboard shortcut.**  
+     Add the following to your VSCode `keybindings.json`:
+
+     ```js
+     {
+       "key": "alt+f", // or any other keys
+       "command": "eslint.executeAutofix"
+     }
+     ```
 
 </details>
 
