@@ -20,13 +20,13 @@ Configs divided into `base` and technology-specific parts, which can be used in 
 
 - It doesn't enforce any doubtful rules, like `prefer-default-export` in `airbnb` config.
 
-- It helps you to write a more readable code.  
+- It helps you to write a **more readable code**.  
   Any use of implicit language mechanic will be warned.
 
-- It's designed to be conflict-free.  
+- It's designed to be a **conflict-free**.  
   For example, `@typescript/eslint:recommended` config does not resolve conflicts with `import` plugin, but `kit/typescript` does.
 
-- The main goal is to create a zero-override config, which can be used almost in any project.
+- The main goal is to create a **zero-override** config, which can be used almost in any project.
 
 Here is the example for TypeScript React project:
 
