@@ -3,8 +3,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/eslint-config-kit">
-  <img src="https://img.shields.io/github/license/risenforces/eslint-config-kit">
+  <a href="https://www.npmjs.com/package/eslint-config-kit">
+    <img src="https://img.shields.io/npm/v/eslint-config-kit">
+  </a>
+  <a href="https://github.com/risenforces/eslint-config-kit/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/risenforces/eslint-config-kit">
+  </a>
 </p>
 
 ---
