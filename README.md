@@ -29,7 +29,7 @@ Here is the example for TypeScript React project:
 - [Installation](#installation)
 - [Configs](#configs)
 - [Config packs](#config-packs)
-- [Integrating ESLint with IDEs/editors](#integrating-eslint-with-ides_editors)
+- [Integrating ESLint with IDEs/editors](#integrating-eslint-with-ideseditors)
 - [Advanced Usage](#advanced-usage)
 - [Troubleshooting](#troubleshooting)
 
@@ -53,7 +53,7 @@ Here is the example for TypeScript React project:
 
 4. Add any desired configs [here](#configs) or [there](#config-packs).
 
-5. _(optional)_ Integrate ESLint into your IDE/editor [here](#integrating-eslint-with-ides_editors). 
+5. _(optional)_ Integrate ESLint into your IDE/editor [here](#integrating-eslint-with-ideseditors). 
 
 ### Configs
 
