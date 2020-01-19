@@ -46,10 +46,18 @@ module.exports = {
     '@typescript-eslint/no-namespace': 'error',
     '@typescript-eslint/no-non-null-assertion': 'warn',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        ignoreRestSiblings: true,
+      },
+    ],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': 'error',
-    '@typescript-eslint/no-unnecessary-condition': 'warn',
+    '@typescript-eslint/no-unnecessary-condition': [
+      'warn',
+      { ignoreRhs: true },
+    ],
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions': 'warn',
     'no-useless-constructor': 'off',
@@ -100,6 +108,9 @@ module.exports = {
         'no-dupe-class-members': 'off',
         // This is already checked by Typescript.
         'no-redeclare': 'off',
+
+        // Checked by Typescript
+        'import/no-extraneous-dependencies': 'off',
       },
     },
   ],
