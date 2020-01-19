@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-kit",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A collection of useful eslint configs",
   "scripts": {
     "test": "jest --config ./jest.config.json"
