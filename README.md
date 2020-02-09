@@ -41,14 +41,31 @@ Here is the example for TypeScript React project:
 
 ## Overview
 
-- [Installation](#installation)
+- [Installation using ESLint Kit CLI](#installation-using-eslint-kit-cli)
+- [Manual installation](#manual-installation)
 - [Configs](#configs)
 - [Config packs](#config-packs)
 - [Integrating ESLint with IDEs/editors](#integrating-eslint-with-ideseditors)
 - [Advanced Usage](#advanced-usage)
 - [Troubleshooting](#troubleshooting)
 
-## Installation
+## Installation using ESLint Kit CLI
+
+1. Install ESLint Kit CLI:
+
+   ```sh
+   npm i -g @eslint-kit/cli
+   ```
+
+2. Run it:
+
+   ```sh
+   eslint-kit
+   ```
+
+Learn more on [@eslint-kit/cli page](https://github.com/eslint-kit/cli).
+
+## Manual installation
 
 1. Install the base dependencies:
 
