@@ -160,34 +160,6 @@ Installation:
 </details>
 
 <details>
-<summary><b>React (performant)</b></summary>
-
-Differences with `react` config:
-
-- Disallow to use the array indexes for `key` prop.
-- Disallow to use arrow functions in jsx, except for DOM components like `button`.
-- Disallow to use props spreading (`{...props}`) in jsx, except for DOM components like `button`.
-
-Installation:
-
-1. Install `react` config dependencies.
-
-2. Extend from `react/performant` config (or replace `react` config with it):
-
-   ```diff
-   {
-     "parser": "babel-eslint",
-     "extends": [
-       "kit/base",
-   -   "kit/react"
-   +   "kit/react/performant"
-     ]
-   }
-   ```
-
-</details>
-
-<details>
 <summary><b>Node</b></summary>
 
 This config just enables the `node` env, it doesn't add any rules.

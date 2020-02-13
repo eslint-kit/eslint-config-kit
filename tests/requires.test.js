@@ -2,7 +2,6 @@ it('should be successfully imported using require()', () => {
   const names = [
     'base',
     'react',
-    'react/performant',
     'prettier',
     'typescript',
     'node',

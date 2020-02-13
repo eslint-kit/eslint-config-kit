@@ -36,6 +36,12 @@ module.exports = {
         allowArrowFunctions: true,
       },
     ],
+    'react/jsx-props-no-spreading': [
+      'error',
+      {
+        html: 'ignore',
+      },
+    ],
     'react/jsx-curly-brace-presence': 'warn',
     'react/jsx-pascal-case': 'warn',
 
