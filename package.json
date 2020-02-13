@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/risenforces/eslint-config-kit.git"
+    "url": "git+https://github.com/eslint-kit/eslint-config-kit.git"
   },
   "keywords": [
     "eslint",
@@ -22,9 +22,9 @@
   "author": "risenforces",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/risenforces/eslint-config-kit/issues"
+    "url": "https://github.com/eslint-kit/eslint-config-kit/issues"
   },
-  "homepage": "https://github.com/risenforces/eslint-config-kit#readme",
+  "homepage": "https://github.com/eslint-kit/eslint-config-kit#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-plugin-prettier": "^3.1.2",
