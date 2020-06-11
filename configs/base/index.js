@@ -90,7 +90,10 @@ module.exports = {
     'no-shadow-restricted-names': 'error',
     'no-undef': 'error',
     'no-undef-init': 'warn',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': [
+      'warn',
+      { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+    ],
     'no-use-before-define': 'error',
 
     // eslint stylistic rules
