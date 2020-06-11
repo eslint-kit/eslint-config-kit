@@ -20,59 +20,7 @@ module.exports = {
     },
   },
   rules: {
-    '@typescript-eslint/adjacent-overload-signatures': 'warn',
-    '@typescript-eslint/array-type': ['warn', { default: 'array-simple' }],
-    '@typescript-eslint/ban-ts-ignore': 'error',
-    '@typescript-eslint/ban-types': 'error',
-    'camelcase': 'off',
-    '@typescript-eslint/camelcase': ['error', { properties: 'always' }],
-    '@typescript-eslint/class-name-casing': 'error',
-    '@typescript-eslint/consistent-type-assertions': 'warn',
-    '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
-    '@typescript-eslint/explicit-function-return-type': [
-      'warn',
-      {
-        allowExpressions: true,
-      },
-    ],
-    'no-array-constructor': 'off',
-    '@typescript-eslint/no-array-constructor': 'warn',
-    '@typescript-eslint/no-empty-interface': 'warn',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-extra-non-null-assertion': 'warn',
-    '@typescript-eslint/no-for-in-array': 'warn',
-    '@typescript-eslint/no-inferrable-types': 'error',
-    '@typescript-eslint/no-misused-new': 'error',
-    '@typescript-eslint/no-namespace': 'error',
-    '@typescript-eslint/no-non-null-assertion': 'warn',
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      {
-        ignoreRestSiblings: true,
-      },
-    ],
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': 'error',
-    '@typescript-eslint/no-unnecessary-condition': [
-      'warn',
-      { ignoreRhs: true },
-    ],
-    'no-unused-expressions': 'off',
-    '@typescript-eslint/no-unused-expressions': 'warn',
-    'no-useless-constructor': 'off',
-    '@typescript-eslint/no-useless-constructor': 'warn',
-    '@typescript-eslint/prefer-for-of': 'warn',
-    '@typescript-eslint/prefer-includes': 'warn',
-    '@typescript-eslint/prefer-namespace-keyword': 'error',
-    '@typescript-eslint/prefer-optional-chain': 'warn',
-    '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
-    '@typescript-eslint/require-array-sort-compare': 'error',
-    'no-return-await': 'off',
-    '@typescript-eslint/return-await': ['error', 'in-try-catch'],
-    '@typescript-eslint/triple-slash-reference': 'error',
-
-    // redefine some import plugin rules
+    // add ts specific extensions to import/extensions rule
     'import/extensions': importsConfig.rules['import/extensions']
       .slice(0, 2)
       .concat(
@@ -86,7 +34,63 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        //Checked by Typescript - ts(2378)
+        // rules from @typescript-eslint
+        // it should be there to support mixed codebases
+        '@typescript-eslint/adjacent-overload-signatures': 'warn',
+        '@typescript-eslint/array-type': ['warn', { default: 'array-simple' }],
+        '@typescript-eslint/ban-ts-ignore': 'error',
+        '@typescript-eslint/ban-types': 'error',
+        '@typescript-eslint/camelcase': ['error', { properties: 'always' }],
+        '@typescript-eslint/class-name-casing': 'error',
+        '@typescript-eslint/consistent-type-assertions': 'warn',
+        '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
+        '@typescript-eslint/explicit-function-return-type': [
+          'warn',
+          {
+            allowExpressions: true,
+          },
+        ],
+        '@typescript-eslint/no-array-constructor': 'warn',
+        '@typescript-eslint/no-empty-interface': 'warn',
+        '@typescript-eslint/no-explicit-any': 'warn',
+        '@typescript-eslint/no-extra-non-null-assertion': 'warn',
+        '@typescript-eslint/no-for-in-array': 'warn',
+        '@typescript-eslint/no-inferrable-types': 'error',
+        '@typescript-eslint/no-misused-new': 'error',
+        '@typescript-eslint/no-namespace': 'error',
+        '@typescript-eslint/no-non-null-assertion': 'warn',
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {
+            ignoreRestSiblings: true,
+          },
+        ],
+        '@typescript-eslint/no-use-before-define': 'error',
+        '@typescript-eslint/no-unnecessary-condition': [
+          'warn',
+          { ignoreRhs: true },
+        ],
+        '@typescript-eslint/no-unused-expressions': 'warn',
+        '@typescript-eslint/no-useless-constructor': 'warn',
+        '@typescript-eslint/prefer-for-of': 'warn',
+        '@typescript-eslint/prefer-includes': 'warn',
+        '@typescript-eslint/prefer-namespace-keyword': 'error',
+        '@typescript-eslint/prefer-optional-chain': 'warn',
+        '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+        '@typescript-eslint/require-array-sort-compare': 'error',
+        '@typescript-eslint/return-await': ['error', 'in-try-catch'],
+        '@typescript-eslint/triple-slash-reference': 'error',
+
+        // Specific rules that are enabled using @typescript-eslint, but have analogues in common eslint
+        'camelcase': 'off',
+        'no-array-constructor': 'off',
+        'no-unused-vars': 'off',
+        'no-use-before-define': 'off',
+        'no-unused-expressions': 'off',
+        'no-useless-constructor': 'off',
+        'no-return-await': 'off',
+
+        // Checked by Typescript - ts(2378)
         'getter-return': 'off',
         // Checked by Typescript - ts(2300)
         'no-dupe-args': 'off',
