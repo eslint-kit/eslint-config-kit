@@ -1,5 +1,6 @@
 module.exports = {
   extends: ['./rules/imports'].map(require.resolve),
+  plugins: ['unicorn'],
   env: {
     es6: true,
   },
@@ -105,7 +106,6 @@ module.exports = {
     'no-lonely-if': 'warn',
     'no-bitwise': 'warn',
     'no-array-constructor': 'warn',
-    'no-nested-ternary': 'warn',
     'no-new-object': 'warn',
     'no-unneeded-ternary': 'warn',
     'operator-assignment': 'warn',
@@ -128,5 +128,112 @@ module.exports = {
     'prefer-rest-params': 'warn',
     'prefer-spread': 'warn',
     'require-yield': 'error',
+
+    // unicorn plugin
+    'unicorn/catch-error-name': 'warn',
+    'unicorn/error-message': 'warn',
+    'unicorn/escape-case': 'warn',
+    'unicorn/explicit-length-check': 'warn',
+    'unicorn/new-for-builtins': 'error',
+    'unicorn/no-abusive-eslint-disable': 'warn',
+    'unicorn/no-array-instanceof': 'error',
+    'unicorn/no-console-spaces': 'warn',
+    'unicorn/no-for-loop': 'warn',
+    'unicorn/no-hex-escape': 'warn',
+    'unicorn/no-nested-ternary': 'warn',
+    'unicorn/no-new-buffer': 'error',
+    'unicorn/no-unreadable-array-destructuring': 'warn',
+    'unicorn/no-useless-undefined': 'warn',
+    'unicorn/no-zero-fractions': 'warn',
+    'unicorn/number-literal-case': 'warn',
+    'unicorn/prefer-add-event-listener': 'error',
+    // rule does not exist but listed in docs
+    // 'unicorn/prefer-array-find': 'error',
+    'unicorn/prefer-dataset': 'warn',
+    'unicorn/prefer-event-key': 'error',
+    'unicorn/prefer-flat-map': 'warn',
+    'unicorn/prefer-includes': 'error',
+    'unicorn/prefer-negative-index': 'warn',
+    'unicorn/prefer-node-append': 'error',
+    'unicorn/prefer-node-remove': 'error',
+    'unicorn/prefer-number-properties': 'error',
+    'unicorn/prefer-optional-catch-binding': 'warn',
+    'unicorn/prefer-query-selector': 'error',
+    'unicorn/prefer-starts-ends-with': 'error',
+    'unicorn/prefer-string-slice': 'error',
+    'unicorn/prefer-text-content': 'error',
+    'unicorn/prefer-trim-start-end': 'warn',
+    'unicorn/prefer-type-error': 'error',
+    'unicorn/prevent-abbreviations': [
+      'warn',
+      {
+        extendDefaultReplacements: false,
+        replacements: {
+          /*
+           * Ignore anything related to "event"
+           * Since there is no option to ignore global "event" variable
+           * (this variable forces to replace e/evt with "event_",
+           *  but we don't want underscore there)
+           */
+
+          arr: {
+            array: true,
+          },
+          // e: {
+          //   event: true,
+          //   error: true,
+          // },
+          err: {
+            error: true,
+          },
+          cb: {
+            callback: true,
+          },
+          ctx: {
+            context: true,
+          },
+          curr: {
+            current: true,
+          },
+          el: {
+            element: true,
+          },
+          elem: {
+            element: true,
+          },
+          // evt: {
+          //   event: true,
+          // },
+          ext: {
+            extension: true,
+          },
+          len: {
+            length: true,
+          },
+          lib: {
+            library: true,
+          },
+          msg: {
+            message: true,
+          },
+          num: {
+            number: true,
+          },
+          obj: {
+            object: true,
+          },
+          opts: {
+            options: true,
+          },
+          str: {
+            string: true,
+          },
+          val: {
+            value: true,
+          },
+        },
+      },
+    ],
+    'unicorn/throw-new-error': 'error',
   },
 }
