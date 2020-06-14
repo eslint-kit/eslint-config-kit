@@ -24,7 +24,7 @@ Configs divided into `base` and technology-specific parts, which can be used in 
   Any use of implicit language mechanic will be warned.
 
 - It's designed to be a **conflict-free**.  
-  For example, `@typescript/eslint:recommended` config does not resolve conflicts with `import` plugin, but `kit/typescript` does.
+  For example, `@typescript/eslint:recommended` config does not resolve conflicts with `import` plugin, but `@eslint-kit/typescript` does.
 
 - The main goal is to create a **zero-override** config, which can be used almost in any project.
 
@@ -33,8 +33,9 @@ Here is the example for TypeScript React project:
 ```js
 {
   "extends": [
-    "kit/base",
-    "kit/packs/react-typescript"
+    "@eslint-kit/base",
+    "@eslint-kit/typescript",
+    "@eslint-kit/react"
   ]
 }
 ```
@@ -44,33 +45,33 @@ Here is the example for TypeScript React project:
 - [Installation using ESLint Kit CLI](#installation-using-eslint-kit-cli)
 - [Manual installation](#manual-installation)
 - [Configs](#configs)
-- [Config packs](#config-packs)
 - [Integrating ESLint with IDEs/editors](#integrating-eslint-with-ideseditors)
 - [Advanced Usage](#advanced-usage)
 - [Troubleshooting](#troubleshooting)
 
 ## Installation using ESLint Kit CLI
 
-1. Install ESLint Kit CLI:
+Using npx (recommended):
 
-   ```sh
-   npm i -g @eslint-kit/cli
-   ```
+```sh
+npx @eslint-kit/cli
+```
 
-2. Run it:
+Installing globally (it's good in rare cases):
 
-   ```sh
-   eslint-kit
-   ```
+```sh
+npm i -g @eslint-kit/cli
+eslint-kit
+```
 
 Learn more on [@eslint-kit/cli page](https://github.com/eslint-kit/cli).
 
 ## Manual installation
 
-1. Install the base dependencies:
+1. Install basic dependencies:
 
    ```sh
-   npm i -D eslint eslint-config-kit eslint-plugin-import
+   npm i -D eslint @eslint-kit/base
    ```
 
 2. Create `.eslintrc` file in the root of your project.
@@ -79,11 +80,11 @@ Learn more on [@eslint-kit/cli page](https://github.com/eslint-kit/cli).
 
    ```js
    {
-     "extends": ["kit/base"]
+     "extends": ["@eslint-kit/base"]
    }
    ```
 
-4. Add any desired configs [here](#configs) or [there](#config-packs).
+4. Add any desired configs [here](#configs).
 
 5. _(optional)_ Integrate ESLint into your IDE/editor [here](#integrating-eslint-with-ideseditors). 
 
@@ -98,19 +99,19 @@ This config just enables the `prettier` plugin and adds `prettier/prettier` rule
 
 Installation:
 
-1. Install dependencies:
+1. Install config:
 
    ```sh
-   npm i -D prettier eslint-plugin-prettier
+   npm i -D @eslint-kit/prettier
    ```
 
-2. Extend from `prettier` config:
+2. Extend from it:
 
    ```diff
    {
      "extends": [
-       "kit/base",
-   +   "kit/prettier"
+       "@eslint-kit/base",
+   +   "@eslint-kit/prettier"
      ]
    }
    ```
@@ -137,22 +138,26 @@ Installation:
 
 Installation:
 
-1. Install dependencies:
-
-   ```sh
-   npm i -D babel-eslint eslint-plugin-react eslint-plugin-react-hooks
-   ```
+1. Install parser _(skip if you already have it)_:
+   
+   Choose between `babel-eslint` and `@typescript-eslint/parser`, depends on what you use.
 
    **Note:** `babel-eslint` requires `babel/core@>=7.2.0` and a valid Babel configuration file to run. If you do not have this already set up, please see the [Babel Usage Guide](https://babeljs.io/docs/en/usage).
 
-2. Extend from `react` config and specify a parser:
+2. Install config:
+
+   ```sh
+   npm i -D @eslint-kit/react
+   ```
+
+3. Extend from it and specify a parser:
 
    ```diff
    {
    + "parser": "babel-eslint",
      "extends": [
-       "kit/base",
-   +   "kit/react"
+       "@eslint-kit/base",
+   +   "@eslint-kit/react"
      ]
    }
    ```
@@ -166,13 +171,19 @@ This config just enables the `node` env, it doesn't add any rules.
 
 Installation:
 
-1. Extend from `node` config:
+1. Install config:
+
+   ```sh
+   npm i -D @eslint-kit/node
+   ```
+
+2. Extend from `node` config:
 
    ```diff
    {
      "extends": [
-       "kit/base",
-   +   "kit/node"
+       "@eslint-kit/base",
+   +   "@eslint-kit/node"
      ]
    }
    ```
@@ -184,54 +195,22 @@ Installation:
 
 Installation:
 
-1. Install dependencies:
+1. Install `@typescript-eslint/parser` parser _(skip if you already have it)_:
+
+2. Install config:
 
    ```sh
-   npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+   npm i -D @eslint-kit/typescript
    ```
 
-2. Extend from `typescript` config and specify a parser:
+3. Extend from `typescript` config and specify a parser:
 
    ```diff
    {
    + "parser": "@typescript-eslint/parser",
      "extends": [
-       "kit/base",
-   +   "kit/typescript"
-     ]
-   }
-   ```
-
-</details>
-
-## Config packs
-
-Config packs are just shortcuts for the most used config combinations.
-
-<details>
-<summary><b>React-TypeScript</b></summary>
-
-Includes:
-
-- `react`
-- `typescript`
-
-Installation:
-
-1. Install dependencies:
-
-   ```sh
-   npm i -D eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
-   ```
-
-2. Extend from `packs/react-typescript` config and specify a parser:
-
-   ```diff
-   {
-   + "parser": "@typescript-eslint/parser",
-     "extends": [
-       "kit/base",
-   +   "kit/packs/react-typescript"
+       "@eslint-kit/base",
+   +   "@eslint-kit/typescript"
      ]
    }
    ```
@@ -248,7 +227,7 @@ Installation:
 2. Choose any option you like:
 
    - **Fix on save.**  
-     Add the following to your VSCode `settings.json`:  
+     Add the following to your `settings.json`:  
 
      ```js
      "editor.codeActionsOnSave": {
@@ -257,7 +236,7 @@ Installation:
      ```
 
    - **Fix on keyboard shortcut.**  
-     Add the following to your VSCode `keybindings.json`:
+     Add the following to your `keybindings.json`:
 
      ```js
      {
@@ -272,6 +251,14 @@ Installation:
 
 <details>
 <summary><b>Add aliases to import plugin (JavaScript)</b></summary>
+
+**Using CLI:**
+
+```sh
+npx @eslint-kit/cli alias
+```
+
+**Manually:**
 
 1. Install dependencies:
 
@@ -328,6 +315,14 @@ Installation:
 
 <details>
 <summary><b>Add aliases to import plugin (TypeScript)</b></summary>
+
+**Using CLI:**
+
+```sh
+npx @eslint-kit/cli alias
+```
+
+**Manually:**
 
 1. Install dependencies:
 
@@ -403,8 +398,8 @@ You should specify your tsconfig location manually in `parserOptions`:
 +   "project": "./tsconfig.json"
 + },
   "extends": [
-    "kit/base",
-    "kit/typescript"
+    "@eslint-kit/base",
+    "@eslint-kit/typescript"
   ]
 }
 ```
@@ -420,8 +415,8 @@ module.exports = {
     project: path.resolve(__dirname, './tsconfig.json') // or your tsconfig location
   },
   extends: [
-    'kit/base',
-    'kit/typescript'
+    '@eslint-kit/base',
+    '@eslint-kit/typescript'
   ]
 }
 ```

@@ -1,8 +1,8 @@
-var extensions = require('../constants/extensions')
-var importsConfig = require('./base/rules/imports')
+import { extensions } from '../constants/extensions'
+import { importRules } from '../shared/import'
 
-module.exports = {
-  plugins: ['@typescript-eslint'],
+export const config = {
+  plugins: ['import', '@typescript-eslint'],
   parserOptions: {
     project: './tsconfig.json',
   },
@@ -21,14 +21,12 @@ module.exports = {
   },
   rules: {
     // add ts specific extensions to import/extensions rule
-    'import/extensions': importsConfig.rules['import/extensions']
-      .slice(0, 2)
-      .concat(
-        extensions.jsAndTs.reduce(function(acc, ext) {
-          acc[ext.slice(1)] = 'never'
-          return acc
-        }, {}),
-      ),
+    'import/extensions': importRules['import/extensions'].slice(0, 2).concat(
+      extensions.jsAndTs.reduce(function(acc, ext) {
+        acc[ext.slice(1)] = 'never'
+        return acc
+      }, {}),
+    ),
   },
   overrides: [
     {

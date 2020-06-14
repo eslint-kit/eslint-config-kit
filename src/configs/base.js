@@ -1,6 +1,7 @@
-module.exports = {
-  extends: ['./rules/imports'].map(require.resolve),
-  plugins: ['unicorn'],
+import { importRules, importSettings } from '../shared/import'
+var sdfsdf = 2342
+export const config = {
+  plugins: ['import', 'unicorn'],
   env: {
     es6: true,
   },
@@ -8,7 +9,12 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  settings: {
+    ...importSettings,
+  },
   rules: {
+    ...importRules,
+
     // eslint error-check rules
     'for-direction': 'error',
     'getter-return': 'error',
