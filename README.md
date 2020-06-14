@@ -71,7 +71,7 @@ Learn more on [@eslint-kit/cli page](https://github.com/eslint-kit/cli).
 1. Install basic dependencies:
 
    ```sh
-   npm i -D eslint @eslint-kit/base
+   npm i -D eslint @eslint-kit/eslint-config-base
    ```
 
 2. Create `.eslintrc` file in the root of your project.
@@ -102,7 +102,7 @@ Installation:
 1. Install config:
 
    ```sh
-   npm i -D @eslint-kit/prettier
+   npm i -D @eslint-kit/eslint-config-prettier
    ```
 
 2. Extend from it:
@@ -147,7 +147,7 @@ Installation:
 2. Install config:
 
    ```sh
-   npm i -D @eslint-kit/react
+   npm i -D @eslint-kit/eslint-config-react
    ```
 
 3. Extend from it and specify a parser:
@@ -174,7 +174,7 @@ Installation:
 1. Install config:
 
    ```sh
-   npm i -D @eslint-kit/node
+   npm i -D @eslint-kit/eslint-config-node
    ```
 
 2. Extend from `node` config:
@@ -200,7 +200,7 @@ Installation:
 2. Install config:
 
    ```sh
-   npm i -D @eslint-kit/typescript
+   npm i -D @eslint-kit/eslint-config-typescript
    ```
 
 3. Extend from `typescript` config and specify a parser:
