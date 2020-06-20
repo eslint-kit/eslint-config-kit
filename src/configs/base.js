@@ -1,5 +1,5 @@
 import { importRules, importSettings } from '../shared/import'
-var sdfsdf = 2342
+
 export const config = {
   plugins: ['import', 'unicorn'],
   env: {
