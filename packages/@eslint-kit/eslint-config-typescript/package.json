@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/eslint-config-typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^3.2.0",
