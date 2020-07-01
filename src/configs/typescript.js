@@ -64,10 +64,7 @@ export const config = {
           },
         ],
         '@typescript-eslint/no-use-before-define': 'error',
-        '@typescript-eslint/no-unnecessary-condition': [
-          'warn',
-          { ignoreRhs: true },
-        ],
+        '@typescript-eslint/no-unnecessary-condition': 'warn',
         '@typescript-eslint/no-unused-expressions': 'warn',
         '@typescript-eslint/no-useless-constructor': 'warn',
         '@typescript-eslint/prefer-for-of': 'warn',
