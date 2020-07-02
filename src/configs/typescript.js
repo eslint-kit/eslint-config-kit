@@ -41,12 +41,8 @@ export const config = {
         '@typescript-eslint/naming-convention': [
           'warn',
           {
-            selector: 'default',
-            format: ['camelCase'],
-          },
-          {
             selector: 'variable',
-            format: ['camelCase', 'UPPER_CASE'],
+            format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
           },
           {
             selector: 'parameter',
