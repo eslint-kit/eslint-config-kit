@@ -36,10 +36,28 @@ export const config = {
         // it should be there to support mixed codebases
         '@typescript-eslint/adjacent-overload-signatures': 'warn',
         '@typescript-eslint/array-type': ['warn', { default: 'array-simple' }],
-        '@typescript-eslint/ban-ts-ignore': 'error',
+        '@typescript-eslint/ban-ts-comment': 'error',
         '@typescript-eslint/ban-types': 'error',
-        '@typescript-eslint/camelcase': ['error', { properties: 'always' }],
-        '@typescript-eslint/class-name-casing': 'error',
+        '@typescript-eslint/naming-convention': [
+          'warn',
+          {
+            selector: 'default',
+            format: ['camelCase'],
+          },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE'],
+          },
+          {
+            selector: 'parameter',
+            format: ['camelCase'],
+            leadingUnderscore: 'allow',
+          },
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+        ],
         '@typescript-eslint/consistent-type-assertions': 'warn',
         '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
         '@typescript-eslint/explicit-function-return-type': [
