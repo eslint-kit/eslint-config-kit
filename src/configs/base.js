@@ -99,7 +99,11 @@ export const config = {
     'no-undef-init': 'warn',
     'no-unused-vars': [
       'warn',
-      { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
+      {
+        ignoreRestSiblings: true,
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
     ],
     'no-use-before-define': 'error',
 
