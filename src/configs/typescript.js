@@ -75,6 +75,8 @@ export const config = {
           'warn',
           {
             ignoreRestSiblings: true,
+            varsIgnorePattern: '^_',
+            argsIgnorePattern: '^_',
           },
         ],
         '@typescript-eslint/no-use-before-define': 'error',
