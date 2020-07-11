@@ -40,7 +40,10 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install dependencies
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install packages dependencies
         run: npm run bootstrap
 
       - name: Build packages
