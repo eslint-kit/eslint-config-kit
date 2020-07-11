@@ -5,7 +5,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run build",
-    "publish": "lerna publish from-package",
+    "publish": "lerna publish from-package --yes",
     "test": "jest --config ./jest.config.json"
   },
   "repository": {
