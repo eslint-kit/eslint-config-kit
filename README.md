@@ -378,6 +378,27 @@ npx @eslint-kit/cli alias
 ## Troubleshooting
 
 <details>
+<summary><b>Common issues</b></summary>
+
+### **Issue:**
+
+`Difinition for rule '**/**' was not found`.
+
+This problem occurs when there are several plugins in the dependencies of your project that are also used by `eslint-kit`, but their versions from the dependencies of your project do not fit the requirements of the `eslint-kit`. Due to the `eslint` mechanics of loading plugins, `eslint-kit` configs get the wrong plugins versions in which some of the rules may either be removed or have other settings.
+
+Read more [here](https://github.com/eslint/eslint/issues/3458).
+
+### **Solution:**
+
+Install `rc` version of `base` config:
+
+```sh
+npm i -D @eslint-kit/eslint-config-base@rc
+```
+
+</details>
+
+<details>
 <summary><b>TypeScript config issues</b></summary>
 
 ### **Issue:**
