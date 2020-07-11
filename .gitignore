@@ -1,2 +1,4 @@
 /node_modules
 /npm
+/packages/**/build
+/packages/**/node_modules

@@ -1,11 +1,17 @@
 {
   "name": "@eslint-kit/eslint-config-typescript",
   "version": "2.0.1",
-  "main": "index.js",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "3.2.0",
     "@typescript-eslint/parser": "^3.2.0",
     "eslint-plugin-import": "2.21.2"
+  },
+  "devDependencies": {
+    "rollup": "2.21.0"
   },
   "peerDependencies": {
     "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"

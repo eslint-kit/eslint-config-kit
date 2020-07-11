@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "A collection of useful eslint configs",
   "scripts": {
-    "build": "rimraf ./npm && node scripts/build.js",
-    "publish": "node scripts/publish.js",
+    "bootstrap": "lerna bootstrap --hoist",
+    "build": "lerna run build",
+    "publish": "lerna publish from-package",
     "test": "jest --config ./jest.config.json"
   },
   "repository": {
@@ -38,6 +39,7 @@
     "find": "^0.3.0",
     "glob": "^7.1.6",
     "jest": "^24.9.0",
+    "lerna": "^3.22.1",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.16.0",

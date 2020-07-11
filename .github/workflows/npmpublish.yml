@@ -5,67 +5,52 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Build packages
-        run: |
-          npm ci
-          npm run build
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: npm
-          path: npm
+  # test:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [10.x, 12.x]
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v1
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Download package builds
-        uses: actions/download-artifact@v1
-        with:
-          name: npm
-      - name: Test packages
-        run: npm test
+  #     - name: Setup Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+
+  #     - name: Install dependencies
+  #       run: npm run bootstrap
+
+  #     - name: Build packages
+  #       run: npm run build
+
+  #     - name: Test packages
+  #       run: npm test
 
   publish-npm:
-    needs: test
+    # needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Setup Node.js ${{ matrix.node-version }}
+
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
+
       - name: Install dependencies
-        run: npm ci
-      - name: Download package builds
-        uses: actions/download-artifact@v1
-        with:
-          name: npm
+        run: npm run bootstrap
+
+      - name: Build packages
+        run: npm run build
+
       - name: Set npm config
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN && npm config set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Publish packages
         run: npm run publish

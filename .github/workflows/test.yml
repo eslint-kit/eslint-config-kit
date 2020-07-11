@@ -2,28 +2,11 @@ name: Test packages
 
 on:
   pull_request:
-    branches: master
+    # branches: master
+    branches-ignore: '**'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-      - name: Build packages
-        run: |
-          npm ci
-          npm run build
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: npm
-          path: npm
-
   test:
-    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,14 +14,17 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
+
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Download package builds
-        uses: actions/download-artifact@v1
-        with:
-          name: npm
+
+      - name: Install dependencies
+        run: npm run bootstrap
+
+      - name: Build packages
+        run: npm run build
+
       - name: Test packages
         run: npm test
-

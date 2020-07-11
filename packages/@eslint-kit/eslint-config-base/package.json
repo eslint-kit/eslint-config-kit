@@ -1,11 +1,17 @@
 {
   "name": "@eslint-kit/eslint-config-base",
   "version": "2.1.1-rc.0",
-  "main": "index.js",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
+  },
   "dependencies": {
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-unicorn": "19.0.1",
     "@rushstack/eslint-patch": "^1.0.2"
+  },
+  "devDependencies": {
+    "rollup": "2.21.0"
   },
   "peerDependencies": {
     "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
