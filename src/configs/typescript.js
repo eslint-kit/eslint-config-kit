@@ -56,12 +56,6 @@ export const config = {
         ],
         '@typescript-eslint/consistent-type-assertions': 'warn',
         '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
-        '@typescript-eslint/explicit-function-return-type': [
-          'warn',
-          {
-            allowExpressions: true,
-          },
-        ],
         '@typescript-eslint/no-array-constructor': 'warn',
         '@typescript-eslint/no-empty-interface': 'warn',
         '@typescript-eslint/no-explicit-any': 'warn',
@@ -79,7 +73,6 @@ export const config = {
             argsIgnorePattern: '^_',
           },
         ],
-        '@typescript-eslint/no-use-before-define': 'error',
         '@typescript-eslint/no-unnecessary-condition': 'warn',
         '@typescript-eslint/no-unused-expressions': 'warn',
         '@typescript-eslint/no-useless-constructor': 'warn',
