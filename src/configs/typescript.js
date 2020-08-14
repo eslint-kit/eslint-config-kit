@@ -35,7 +35,6 @@ export const config = {
         // rules from @typescript-eslint
         // it should be there to support mixed codebases
         '@typescript-eslint/adjacent-overload-signatures': 'warn',
-        '@typescript-eslint/array-type': ['warn', { default: 'array-simple' }],
         '@typescript-eslint/ban-ts-comment': 'error',
         '@typescript-eslint/ban-types': 'error',
         '@typescript-eslint/naming-convention': [
