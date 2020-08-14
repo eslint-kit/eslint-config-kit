@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/eslint-config-typescript",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
