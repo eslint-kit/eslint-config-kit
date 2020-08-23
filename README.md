@@ -403,7 +403,7 @@ npm i -D @eslint-kit/eslint-config-base@rc
 
 ### **Issue:**
 
-`You have used a rule which requires parserServices to be generated. You must therefore provide a value for the "parserOptions.project" property for @typescript-eslint/parser`.
+- Anything related to `"parserOptions.project"`
 
 ### **Solution:**
 
@@ -413,7 +413,7 @@ You should specify your tsconfig location manually in `parserOptions`:
 {
   "parser": "@typescript-eslint/parser",
 + "parserOptions": {
-+   "project": "./tsconfig.json"
++   "project": ["*/tsconfig.json"]
 + },
   "extends": [
     "@eslint-kit/base",
@@ -430,7 +430,7 @@ const path = require('path')
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: path.resolve(__dirname, './tsconfig.json') // or your tsconfig location
+    project: [path.resolve(__dirname, './tsconfig.json')] // or your tsconfig location
   },
   extends: [
     '@eslint-kit/base',
