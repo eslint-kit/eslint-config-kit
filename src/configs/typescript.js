@@ -4,7 +4,9 @@ import { importRules } from '../shared/import'
 export const config = {
   plugins: ['import', '@typescript-eslint'],
   parserOptions: {
-    project: './tsconfig.json',
+    project: 'tsconfig.json',
+    createDefaultProgram: true,
+    tsconfigRootDir: './',
   },
   settings: {
     'import/extensions': extensions.jsAndTs,
