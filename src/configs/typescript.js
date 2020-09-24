@@ -44,6 +44,7 @@ export const config = {
           {
             selector: 'variable',
             format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
+            leadingUnderscore: 'allow',
           },
           {
             selector: 'parameter',
