@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/eslint-config-base",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
@@ -17,7 +17,6 @@
     "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
   },
   "publishConfig": {
-    "access": "public",
-    "tag": "rc"
+    "access": "public"
   }
 }
