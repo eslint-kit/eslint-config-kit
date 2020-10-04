@@ -44,6 +44,7 @@ export const config = {
     ],
     'react/jsx-curly-brace-presence': 'warn',
     'react/jsx-pascal-case': 'warn',
+    'react/jsx-no-undef': 'error'
 
     // hooks
     'react-hooks/rules-of-hooks': 'error',
