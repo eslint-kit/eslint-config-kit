@@ -382,7 +382,7 @@ npx @eslint-kit/cli alias
 
 ### **Issue:**
 
-`Difinition for rule '**/**' was not found`.
+`Definition for rule '**/**' was not found`.
 
 This problem occurs when there are several plugins in the dependencies of your project that are also used by `eslint-kit`, but their versions from the dependencies of your project do not fit the requirements of the `eslint-kit`. Due to the `eslint` mechanics of loading plugins, `eslint-kit` configs get the wrong plugins versions in which some of the rules may either be removed or have other settings.
 
