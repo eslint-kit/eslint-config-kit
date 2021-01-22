@@ -1,7 +1,8 @@
 import { importRules, importSettings } from '../shared/import'
 
 export const config = {
-  plugins: ['import', 'unicorn'],
+  plugins: ['import', 'unicorn', 'sonarjs'],
+  extends: ['plugin:sonarjs/recommended'],
   env: {
     es6: true,
   },
