@@ -6,8 +6,8 @@
     "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
   },
   "dependencies": {
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react-hooks": "4.2.0"
   },
   "devDependencies": {
     "rollup": "2.21.0"
