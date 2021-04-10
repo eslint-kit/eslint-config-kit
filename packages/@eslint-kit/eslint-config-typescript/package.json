@@ -6,8 +6,8 @@
     "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
+    "@typescript-eslint/eslint-plugin": "4.15.0",
+    "@typescript-eslint/parser": "4.15.0",
     "eslint-plugin-import": "2.21.2"
   },
   "devDependencies": {
