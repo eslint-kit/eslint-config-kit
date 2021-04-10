@@ -91,7 +91,6 @@ export const config = {
         'camelcase': 'off',
         'no-array-constructor': 'off',
         'no-unused-vars': 'off',
-        'no-use-before-define': 'off',
         'no-unused-expressions': 'off',
         'no-useless-constructor': 'off',
         'no-return-await': 'off',

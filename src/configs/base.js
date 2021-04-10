@@ -106,7 +106,6 @@ export const config = {
         argsIgnorePattern: '^_',
       },
     ],
-    'no-use-before-define': 'error',
 
     // eslint stylistic rules
     'lines-between-class-members': [
