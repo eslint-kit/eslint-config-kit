@@ -1,5 +1,5 @@
 {
-  "name": "@eslint-kit/eslint-config-react",
+  "name": "@eslint-kit/eslint-config-react-17",
   "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {
