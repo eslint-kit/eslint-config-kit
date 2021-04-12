@@ -1,5 +1,5 @@
 {
-  "name": "@eslint-kit/eslint-config-react-17",
+  "name": "@eslint-kit/eslint-config-react-new-jsx-transform",
   "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {
