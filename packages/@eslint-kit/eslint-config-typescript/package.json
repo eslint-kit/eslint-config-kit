@@ -7,8 +7,7 @@
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "4.15.0",
-    "@typescript-eslint/parser": "4.15.0",
-    "eslint-plugin-import": "2.21.2"
+    "@typescript-eslint/parser": "4.15.0"
   },
   "devDependencies": {
     "rollup": "2.21.0"

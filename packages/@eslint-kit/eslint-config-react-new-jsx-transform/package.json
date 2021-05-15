@@ -5,9 +5,7 @@
   "scripts": {
     "build": "rollup --config ../../../shared/configs/eslint-config.rollup.js"
   },
-  "dependencies": {
-    "eslint-plugin-react": "7.22.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "rollup": "2.21.0"
   },

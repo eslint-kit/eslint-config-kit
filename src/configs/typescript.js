@@ -2,7 +2,7 @@ import { extensions } from '../constants/extensions'
 import { importRules } from '../shared/import'
 
 export const config = {
-  plugins: ['import', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   parserOptions: {
     project: 'tsconfig.json',
     createDefaultProgram: true,
