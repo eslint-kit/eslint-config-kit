@@ -1,9 +1,9 @@
 {
   "version": "0.0.1",
-  "npmClient": "npm",
+  "npmClient": "yarn",
   "command": {
     "bootstrap": {
-      "npmClientArgs": ["--no-package-lock"]
+      "yarnClientArgs": ["--no-lockfile"]
     }
   },
   "packages": ["packages/@eslint-kit/*"]
