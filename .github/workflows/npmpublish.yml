@@ -41,13 +41,13 @@ jobs:
           node-version: 12
 
       - name: Install root dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
 
       - name: Install packages dependencies
-        run: npm run bootstrap
+        run: yarn bootstrap
 
       - name: Build packages
-        run: npm run build
+        run: yarn build
 
       - name: Set npm config
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN && npm config set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
