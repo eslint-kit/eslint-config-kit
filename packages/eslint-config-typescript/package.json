@@ -1,0 +1,18 @@
+{
+  "name": "@eslint-kit/eslint-config-typescript",
+  "version": "4.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "4.15.0",
+    "@typescript-eslint/parser": "4.15.0"
+  },
+  "peerDependencies": {
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "lib": ["es2017"],
+    "module": "CommonJS",
+    "target": "ES6",
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["shared", "packages"],
+  "exclude": ["node_modules", "e2e"],
+}

@@ -1,13 +1,14 @@
 {
-  "env": {
-    "node": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 2018
-  },
-  "plugins": ["prettier"],
+  "extends": [
+    "@eslint-kit/base",
+    "@eslint-kit/typescript",
+    "@eslint-kit/node",
+    "@eslint-kit/prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
-    "prettier/prettier": "warn"
+    "import/no-anonymous-default-export": ["error", {
+      "allowObject": true
+    }]
   }
 }

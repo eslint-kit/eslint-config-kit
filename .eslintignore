@@ -1,2 +1,2 @@
-/npm
-/packages/**/build
+/config
+**/*.js
