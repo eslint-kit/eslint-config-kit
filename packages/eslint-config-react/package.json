@@ -1,0 +1,18 @@
+{
+  "name": "@eslint-kit/eslint-config-react",
+  "version": "2.2.1",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "dependencies": {
+    "eslint-plugin-react": "7.23.2",
+    "eslint-plugin-react-hooks": "4.2.0"
+  },
+  "peerDependencies": {
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

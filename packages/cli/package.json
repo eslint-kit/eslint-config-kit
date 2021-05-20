@@ -1,0 +1,59 @@
+{
+  "name": "@eslint-kit/cli",
+  "version": "6.0.0",
+  "description": "A cli tool for @eslint-kit configs",
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.5.1"
+  },
+  "bin": {
+    "eslint-kit": "bin/eslint-kit.js"
+  },
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "start": "node bin/eslint-kit.js",
+    "test": "jest --config ./jest.config.json --passWithNoTests",
+    "test:dev": "jest --config ./jest.config.json --passWithNoTests --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslint-kit/cli.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eslint-kit/cli/issues"
+  },
+  "homepage": "https://github.com/eslint-kit/cli#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^5.0.0-2",
+    "deepmerge": "^4.2.2",
+    "glob": "^7.1.7",
+    "glob-promise": "^4.1.0",
+    "inquirer": "7.0.4",
+    "mem": "^6.0.1",
+    "nanoid": "^2.1.11",
+    "ora": "^4.0.3",
+    "semver": "^7.3.5",
+    "yamljs": "0.3.0"
+  },
+  "devDependencies": {
+    "@types/deepmerge": "^2.2.0",
+    "@types/inquirer": "6.5.0",
+    "@types/jest": "25.1.2",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "12.12.21",
+    "@types/ora": "^3.2.0",
+    "@types/rimraf": "2.0.3",
+    "@types/semver": "^7.3.4",
+    "@types/webpack-node-externals": "1.7.1",
+    "@types/yamljs": "0.2.30",
+    "delete-empty": "3.0.0",
+    "jest": "26.6.3",
+    "rimraf": "^3.0.1",
+    "ts-jest": "26.5.6",
+    "ts-loader": "6.2.1",
+    "ts-node": "8.6.2",
+    "typescript": "^3.7.5"
+  }
+}

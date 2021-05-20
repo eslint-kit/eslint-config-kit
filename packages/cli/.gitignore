@@ -1,0 +1,14 @@
+.idea/
+.envrc
+node_modules/
+.DS_Store
+*.map
+
+# output
+build
+
+# configuration
+/.vscode
+
+# sample
+/sample

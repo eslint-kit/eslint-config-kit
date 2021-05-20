@@ -1,4 +1,6 @@
-/node_modules
-/npm
-/packages/**/build
-/packages/**/node_modules
+.idea/
+.envrc
+node_modules
+.DS_Store
+*.map
+.vscode

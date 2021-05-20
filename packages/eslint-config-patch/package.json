@@ -1,0 +1,17 @@
+{
+  "name": "@eslint-kit/eslint-config-patch",
+  "version": "0.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "dependencies": {
+    "@rushstack/eslint-patch": "1.0.6"
+  },
+  "peerDependencies": {
+    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
