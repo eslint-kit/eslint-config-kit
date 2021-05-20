@@ -35,10 +35,7 @@ jobs:
       - name: Create Release Pull Request
         uses: changesets/action@master
         with:
-          version: |
-            rm .husky/commit-msg
-            git stash
-            changeset version
+          version: rm ".husky/commit-msg"; git stash; changeset version
           publish: yarn changeset publish
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
