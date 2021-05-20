@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/eslint-config-react",
-  "version": "3.0.0",
+  "version": "2.2.1",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config rollup.config.js"
