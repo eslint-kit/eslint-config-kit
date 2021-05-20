@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/eslint-config-patch",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config rollup.config.js"
