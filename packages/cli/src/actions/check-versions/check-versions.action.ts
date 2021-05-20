@@ -82,8 +82,8 @@ export class CheckVersionsAction {
   public static async handle(): Promise<void> {
     try {
       await CheckVersionsAction.process()
-    } catch (err) {
-      log(err.message, chalk.red)
+    } catch (error) {
+      log(error.message, chalk.red)
     }
   }
 }

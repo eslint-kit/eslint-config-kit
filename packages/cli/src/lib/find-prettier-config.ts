@@ -16,8 +16,8 @@ interface Params {
 export function findPrettierConfig({
   rootDirFileNames,
 }: Params): PrettierConfigMeta {
-  const isExist = configFileNames.some(configFileName => {
-    return rootDirFileNames.some(fileName => fileName === configFileName)
+  const isExist = configFileNames.some((configFileName) => {
+    return rootDirFileNames.includes(configFileName)
   })
 
   return { isExist }

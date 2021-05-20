@@ -101,9 +101,6 @@ const types = [
 ];
 
 const packagesPath = createPath('packages')
-const frontendPath = packagesPath.add('frontend')
-const frontendSrcPath = frontendPath.add('src')
-const frontendFeaturesPath = frontendSrcPath.add('features')
 
 const scopes = [
   // common
@@ -133,7 +130,8 @@ module.exports = {
     .sort()
     .sort(byPriority({
       repo: 100
-    })),
+    }))
+    .map(name => ({ name })),
   allowCustomScopes: true,
   allowBreakingChanges: ["feat", "fix", "revert"],
   askForBreakingChangeFirst: true,

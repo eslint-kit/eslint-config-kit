@@ -30,12 +30,13 @@ function createMessage({
   return result
 }
 
-type Action =
-  | 'update-both'
-  | 'downgrade-high'
-  | 'upgrade-low'
-  | 'select-manually'
-  | 'do-nothing'
+enum Action {
+  UpdateBoth = 'update-both',
+  DowngradeHigh = 'downgrade-high',
+  UpgradeLow = 'upgrade-low',
+  SelectManually = 'select-manually',
+  DoNothing = 'do-nothing',
+}
 
 interface ActionChoice {
   name: string
@@ -57,7 +58,7 @@ export async function getWrongDependenciesToUpdate({
 
   actionChoices.push({
     name: 'Update all packages to exact versions (recommended)',
-    value: 'update-both',
+    value: Action.UpdateBoth,
   })
 
   if (
@@ -67,11 +68,11 @@ export async function getWrongDependenciesToUpdate({
     actionChoices.push(
       {
         name: 'Only downgrade packages with too high version',
-        value: 'downgrade-high',
+        value: Action.DowngradeHigh,
       },
       {
         name: 'Only upgrade packages with too low version',
-        value: 'upgrade-low',
+        value: Action.UpgradeLow,
       }
     )
   }
@@ -79,11 +80,11 @@ export async function getWrongDependenciesToUpdate({
   actionChoices.push(
     {
       name: 'Select packages manually',
-      value: 'select-manually',
+      value: Action.SelectManually,
     },
     {
       name: 'Do nothing (not recommended)',
-      value: 'do-nothing',
+      value: Action.DoNothing,
     }
   )
 
@@ -119,7 +120,7 @@ export async function getWrongDependenciesToUpdate({
       type: 'checkbox',
       name: 'selectedPackages',
       message: 'Select packages to update:\n',
-      choices: wrongDependencies.notEqual.map(dependency => {
+      choices: wrongDependencies.notEqual.map((dependency) => {
         const action = wrongDependencies.tooHigh.includes(dependency)
           ? 'downgrade'
           : 'upgrade'

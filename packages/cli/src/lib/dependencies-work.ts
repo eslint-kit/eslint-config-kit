@@ -62,7 +62,7 @@ export async function updateDependencies({
   const showResult = (text: string): Promise<void> => {
     spinner.text = text
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(resolve, 2000)
     })
   }

@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
     typescript({
-      include: ['../../shared/**/*.ts']
+      include: ['../../shared/**/*.ts', '../../packages/**/*.ts']
     }),
     commonjs(),
     nodeResolve(),

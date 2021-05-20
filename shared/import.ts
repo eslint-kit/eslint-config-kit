@@ -70,7 +70,7 @@ export const importRules: ImportRules = {
   'import/newline-after-import': 'warn',
   'import/no-webpack-loader-syntax': 'error',
   'import/no-self-import': 'error',
-  'import/no-cycle': ['error', { maxDepth: Infinity }],
+  'import/no-cycle': ['error', { maxDepth: Number.POSITIVE_INFINITY }],
   'import/no-useless-path-segments': ['warn', { commonjs: true }],
   'import/order': [
     'warn',

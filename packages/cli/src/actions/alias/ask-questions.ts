@@ -13,7 +13,7 @@ export function askQuestions(): Promise<Answers> {
       name: 'aliasesMeta',
       message: 'Enter aliases',
       default: '{\n  "@app": "./src"\n}',
-      filter: string => {
+      filter: (string) => {
         const json = string.replace(/[\n ]/g, '')
         const paths = JSON.parse(json)
 

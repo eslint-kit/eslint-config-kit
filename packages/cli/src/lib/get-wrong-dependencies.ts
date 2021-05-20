@@ -31,22 +31,22 @@ export function getWrongDependencies({
 
   const limitedDependencies = Object.keys(allDependencies)
     .filter(isDependencyMeaningful)
-    .filter(dependency => {
+    .filter((dependency) => {
       return requiredDependencies.includes(dependency)
     })
     .filter(isDependencyLimited)
 
-  const notEqual = limitedDependencies.filter(dependency => {
+  const notEqual = limitedDependencies.filter((dependency) => {
     const version = allDependencies[dependency]
     return !equals(version, maxVersions[dependency] as string)
   })
 
-  const tooLow = limitedDependencies.filter(dependency => {
+  const tooLow = limitedDependencies.filter((dependency) => {
     const version = allDependencies[dependency]
     return lower(version, maxVersions[dependency] as string)
   })
 
-  const tooHigh = limitedDependencies.filter(dependency => {
+  const tooHigh = limitedDependencies.filter((dependency) => {
     const version = allDependencies[dependency]
     return mayBeGreater(version, maxVersions[dependency] as string)
   })

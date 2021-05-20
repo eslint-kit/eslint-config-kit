@@ -8,12 +8,12 @@ import {
 import { combineMerge } from './shared'
 import { CustomMerge } from './types'
 
-const jsCustomMerge: CustomMerge = key => {
+const jsCustomMerge: CustomMerge = (key) => {
   if (key === 'map') {
     return (a: AliasMapItem[], b: AliasMapItem[]) => {
       const existingAliasNames = a.map(([aliasName]) => aliasName)
 
-      const newMapItems = b.filter(mapItem => {
+      const newMapItems = b.filter((mapItem) => {
         const [aliasName] = mapItem
         return !existingAliasNames.includes(aliasName)
       })
@@ -37,14 +37,14 @@ const jsCustomMerge: CustomMerge = key => {
   }
 
   if (key === 'groups') {
-    return a => a
+    return (a) => a
   }
 
   if (key === 'pathGroups') {
     return (a: PathGroup[], b: PathGroup[]) => {
-      const existingPatterns = a.map(group => group.pattern)
+      const existingPatterns = a.map((group) => group.pattern)
 
-      const newGroups = b.filter(group => {
+      const newGroups = b.filter((group) => {
         return !existingPatterns.includes(group.pattern)
       })
 

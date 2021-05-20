@@ -10,7 +10,7 @@ type ProcessingJobsMap = Map<string, Promise<any>>
 
 const processingJobsMap: ProcessingJobsMap = new Map()
 
-export function asyncMerge<T extends Function>(fn: T): T {
+export function asyncMerge<T extends (...args: any[]) => any>(fn: T): T {
   const prefix = nanoid()
 
   const run = (...args: any[]): any => {

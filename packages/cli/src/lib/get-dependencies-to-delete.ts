@@ -24,7 +24,7 @@ export function getDependenciesToDelete({
   return (
     installedDependencies
       .filter(isDependencyMeaningful)
-      .filter(dependency => {
+      .filter((dependency) => {
         return !requiredDependenciesSet.has(dependency)
       })
       // we can delete configs without any questions

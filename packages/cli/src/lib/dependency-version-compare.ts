@@ -8,6 +8,13 @@ import {
   major,
 } from 'semver'
 
+class InvalidVersionError extends Error {
+  constructor() {
+    super()
+    this.message = 'Invalid version'
+  }
+}
+
 function toVersion(versionOrRange: string): string {
   if (valid(versionOrRange)) {
     return versionOrRange
@@ -15,11 +22,11 @@ function toVersion(versionOrRange: string): string {
 
   if (validRange(versionOrRange)) {
     const versionObject = minVersion(versionOrRange)
-    if (!versionObject) throw new Error('Invalid version')
+    if (!versionObject) throw new InvalidVersionError()
     return versionObject.version
   }
 
-  throw new Error('Invalid version')
+  throw new InvalidVersionError()
 }
 
 function compare(
@@ -36,7 +43,7 @@ function compare(
     return subset(versionOrRange, sign + target) || (sign === '>' && matches)
   }
 
-  throw new Error('Invalid version')
+  throw new InvalidVersionError()
 }
 
 export function getMajor(versionOrRange: string): number {

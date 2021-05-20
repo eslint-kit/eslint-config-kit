@@ -21,12 +21,12 @@ export class AbstractRunner {
       const child: ChildProcess = spawn(this.binary, args, options)
 
       if (collect) {
-        child.stdout?.on('data', data =>
+        child.stdout?.on('data', (data) =>
           resolve(data.toString().replace(/\r\n|\n/, ''))
         )
       }
 
-      child.on('close', code => {
+      child.on('close', (code) => {
         if (code === 0) {
           resolve(null)
         } else {

@@ -81,6 +81,7 @@ export interface AliasesMeta {
 }
 
 export type Config =
+  | 'patch'
   | 'base'
   | 'prettier'
   | 'react'

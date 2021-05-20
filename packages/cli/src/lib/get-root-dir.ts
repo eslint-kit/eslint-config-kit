@@ -46,7 +46,7 @@ export async function getRootDir({ rootPackageJson }: Params): Promise<string> {
 
   if (workspace) {
     if (typeof workspace !== 'string') {
-      throw new Error(MESSAGES.WORKSPACES.NOT_VALID)
+      throw new TypeError(MESSAGES.WORKSPACES.NOT_VALID)
     }
 
     if (!rootPackageJson.workspaces) {

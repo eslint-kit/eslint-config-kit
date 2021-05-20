@@ -21,9 +21,10 @@ type Unpromisify<T> = {
   [K in keyof T]: T[K] extends Promise<infer R> ? R : T[K]
 }
 
-async function unpromisify<T extends {}, O extends Unpromisify<T>>(
-  object: T
-): Promise<O> {
+async function unpromisify<
+  T extends Record<string, unknown>,
+  O extends Unpromisify<T>
+>(object: T): Promise<O> {
   const result: Partial<O> = {}
 
   for (const key in object) {
@@ -143,7 +144,7 @@ async function getDataBySchemaInternal<
       dependenciesSchema,
       results,
       providedDependencies
-    ).then(resolverInput => {
+    ).then((resolverInput) => {
       const requestedProvidedDependencies: Partial<ProvidedDependencies> = {}
 
       for (const dependency of fromProvidedDependencies) {
@@ -159,6 +160,7 @@ async function getDataBySchemaInternal<
   }
 
   for (const field in schema) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!schema[field]) continue
     resolve(field as keyof Data)
   }

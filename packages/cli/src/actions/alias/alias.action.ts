@@ -89,8 +89,8 @@ export class AliasAction {
   public static async handle(): Promise<void> {
     try {
       await AliasAction.process()
-    } catch (err) {
-      log(err.message, chalk.red)
+    } catch (error) {
+      log(error.message, chalk.red)
     }
   }
 }

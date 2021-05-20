@@ -1,7 +1,7 @@
 import { asyncMerge } from './async-merge'
 
 function wait(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 describe('wrapIntoAsyncMerge', () => {
@@ -12,14 +12,14 @@ describe('wrapIntoAsyncMerge', () => {
 
     expect(asyncMergedAdd(2, 2)).toBe(4)
 
-    const createObject = (): {} => ({})
+    const createObject = (): Record<string, unknown> => ({})
 
     const asyncMergedCreateObject = asyncMerge(createObject)
 
-    const obj1 = asyncMergedCreateObject()
-    const obj2 = asyncMergedCreateObject()
+    const object1 = asyncMergedCreateObject()
+    const object2 = asyncMergedCreateObject()
 
-    expect(obj1).not.toBe(obj2)
+    expect(object1).not.toBe(object2)
   })
 
   it('should work for async functions', async () => {
@@ -48,7 +48,7 @@ describe('wrapIntoAsyncMerge', () => {
   it('should work for independent async functions', async () => {
     const asyncMergedWait = asyncMerge(wait)
 
-    const wrappedWait: typeof wait = ms => wait(ms)
+    const wrappedWait: typeof wait = (ms) => wait(ms)
 
     const asyncMergedWrappedWait = asyncMerge(wrappedWait)
 
@@ -61,7 +61,7 @@ describe('wrapIntoAsyncMerge', () => {
     await secondPromise
   })
 
-  it('should do not catch errors', async done => {
+  it('should do not catch errors', async (done) => {
     const fn = (): Promise<never> => Promise.reject('hello')
 
     const wrappedFn = asyncMerge(fn)
@@ -70,8 +70,8 @@ describe('wrapIntoAsyncMerge', () => {
       await wrappedFn()
 
       done.fail('asyncMerge caught the error')
-    } catch (err) {
-      expect(err).toBe('hello')
+    } catch (error) {
+      expect(error).toBe('hello')
     }
 
     done()

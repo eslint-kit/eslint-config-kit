@@ -9,6 +9,11 @@ interface ConfigChoice extends Choice {
 }
 
 const DEFAULT_CONFIG_CHOICES: ConfigChoice[] = [
+  {
+    name: "Patch (usually required, skip only if you're sure)",
+    value: 'patch',
+    checked: true,
+  },
   { name: 'Base (required)', value: 'base', checked: true },
   { name: 'Prettier', value: 'prettier' },
   { name: 'React', value: 'react' },
@@ -17,6 +22,7 @@ const DEFAULT_CONFIG_CHOICES: ConfigChoice[] = [
 ]
 
 const configToNameMapper: Record<Config, string> = {
+  'patch': 'Patch',
   'base': 'Base',
   'prettier': 'Prettier',
   'react': 'React',
@@ -92,10 +98,14 @@ export async function askQuestions({
   const installedConfigsMap = toMap(installedConfigs)
   const hasInstalledConfigs = installedConfigsMap.size > 0
 
-  const configChoices: ConfigChoice[] = DEFAULT_CONFIG_CHOICES.map(choice => {
+  const configChoices: ConfigChoice[] = DEFAULT_CONFIG_CHOICES.map((choice) => {
     const { name, value } = choice
 
     const overridedProps: Partial<ConfigChoice> = {}
+
+    if (installedConfigsMap.size > 0 && value === 'patch') {
+      overridedProps.checked = false
+    }
 
     if (installedConfigsMap.has(value) && value !== 'base') {
       overridedProps.name = `${name} (installed)`
@@ -116,7 +126,7 @@ export async function askQuestions({
       name: 'configs',
       message: createConfigsMessage({ hasInstalledConfigs }),
       choices: configChoices,
-      validate: input => {
+      validate: (input) => {
         if (!input.includes('base')) {
           return 'base config is required'
         }
@@ -126,15 +136,15 @@ export async function askQuestions({
     },
   ])
 
-  const addedConfigs = updatedConfigs.filter(config => {
+  const addedConfigs = updatedConfigs.filter((config) => {
     return !installedConfigs.includes(config)
   })
 
-  const deletedConfigs = installedConfigs.filter(config => {
+  const deletedConfigs = installedConfigs.filter((config) => {
     return !updatedConfigs.includes(config)
   })
 
-  const remainedConfigs = updatedConfigs.filter(config => {
+  const remainedConfigs = updatedConfigs.filter((config) => {
     return installedConfigs.includes(config)
   })
 

@@ -5,5 +5,8 @@ declare module 'npm-programmatic' {
     saveDev?: boolean
   }
 
-  export function install(dependencies: string[], options: InstallOptions): Promise<void>
+  export function install(
+    dependencies: string[],
+    options: InstallOptions
+  ): Promise<void>
 }

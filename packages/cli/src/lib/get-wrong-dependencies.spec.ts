@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { getWrongDependencies } from './get-wrong-dependencies'
 import { MaxVersions } from './shared-types'
 

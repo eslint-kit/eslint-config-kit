@@ -11,10 +11,9 @@
   },
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "lint": "eslint {lib,bin}/**/*.ts --fix",
     "start": "node bin/eslint-kit.js",
     "test": "jest --config ./jest.config.json --passWithNoTests",
-    "test:dev": "jest --config jest-config.json --passWithNoTests --watchAll"
+    "test:dev": "jest --config ./jest.config.json --passWithNoTests --watchAll"
   },
   "repository": {
     "type": "git",
@@ -50,11 +49,9 @@
     "@types/webpack-node-externals": "1.7.1",
     "@types/yamljs": "0.2.30",
     "delete-empty": "3.0.0",
-    "gulp": "4.0.2",
-    "gulp-clean": "0.4.0",
-    "jest": "25.1.0",
+    "jest": "26.6.3",
     "rimraf": "^3.0.1",
-    "ts-jest": "25.2.0",
+    "ts-jest": "26.5.6",
     "ts-loader": "6.2.1",
     "ts-node": "8.6.2",
     "typescript": "^3.7.5"

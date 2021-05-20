@@ -80,23 +80,24 @@ describe('YarnPackageManager', () => {
   describe('uninstall', () => {
     it('should use the proper command for uninstalling', async () => {
       const spy = jest.spyOn((packageManager as any).runner, 'run')
+      const removeCommand = 'remove -W one two --silent'
 
       await packageManager.uninstall({
         dependencies: ['one', 'two'],
       })
-      expect(spy).toBeCalledWith('remove -W one two --silent', true)
+      expect(spy).toBeCalledWith(removeCommand, true)
 
       await packageManager.uninstall({
         dependencies: ['one', 'two'],
         saveType: 'prod',
       })
-      expect(spy).toBeCalledWith('remove -W one two --silent', true)
+      expect(spy).toBeCalledWith(removeCommand, true)
 
       await packageManager.uninstall({
         dependencies: ['one', 'two'],
         saveType: 'dev',
       })
-      expect(spy).toBeCalledWith('remove -W one two --silent', true)
+      expect(spy).toBeCalledWith(removeCommand, true)
 
       await packageManager.uninstall({
         dependencies: ['one', 'two'],

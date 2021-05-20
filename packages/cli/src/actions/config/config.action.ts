@@ -113,8 +113,8 @@ export class ConfigAction {
   public static async handle(): Promise<void> {
     try {
       await ConfigAction.process()
-    } catch (err) {
-      log(err.message, chalk.red)
+    } catch (error) {
+      log(error.message, chalk.red)
     }
   }
 }

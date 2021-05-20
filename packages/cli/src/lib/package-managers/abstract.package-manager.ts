@@ -1,7 +1,4 @@
-import path from 'path'
 import { AbstractRunner } from '../runners/abstract.runner'
-import { PackageJson } from '../shared-types'
-import { FileSystemReader } from '../readers'
 import { PackageManagerCommands } from './types'
 
 type SaveType = 'prod' | 'dev'

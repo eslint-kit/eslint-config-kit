@@ -18,7 +18,7 @@ export function getDependenciesToInstall({
   const installedDependenciesSet = new Set(installedDependencies)
 
   return requiredDependencies
-    .filter(dependency => {
+    .filter((dependency) => {
       return !installedDependenciesSet.has(dependency)
     })
     .concat(wrongDependenciesToUpdate)

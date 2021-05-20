@@ -27,8 +27,8 @@ export async function findEslintConfig({
   rootDirFileNames,
   packageJson,
 }: FindEslintConfigParams): Promise<EslintConfigMeta> {
-  const configFileName = configFileNames.find(configFileName => {
-    return rootDirFileNames.some(fileName => fileName === configFileName)
+  const configFileName = configFileNames.find((configFileName) => {
+    return rootDirFileNames.includes(configFileName)
   })
 
   /*

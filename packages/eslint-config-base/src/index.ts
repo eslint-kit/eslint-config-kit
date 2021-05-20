@@ -1,5 +1,3 @@
-import '@rushstack/eslint-patch/modern-module-resolution'
-
 import { importRules, importSettings } from '../../../shared'
 
 export default {

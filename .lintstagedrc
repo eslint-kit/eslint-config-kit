@@ -1,5 +1,5 @@
 {
-  "*.ts": [
-    "eslint --fix"
+  "packages/**/*.{ts,tsx}": [
+    "yarn eslint --fix"
   ]
 }

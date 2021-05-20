@@ -29,7 +29,7 @@ export async function updateEslintConfig({
   if (eslintConfigMeta.isYaml) {
     return FileSystemReader.writeFile(
       path.resolve(rootDir, eslintConfigMeta.configFileName),
-      YAML.stringify(updatedConfig, Infinity, 2)
+      YAML.stringify(updatedConfig, Number.POSITIVE_INFINITY, 2)
     )
   }
 

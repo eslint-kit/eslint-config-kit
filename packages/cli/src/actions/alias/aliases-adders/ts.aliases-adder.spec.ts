@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { DEPENDENCIES } from '../../../lib/constants'
 import { Json, AliasesMeta } from '../../../lib/shared-types'
 import { tsAliasesAdder } from './ts.aliases-adder'

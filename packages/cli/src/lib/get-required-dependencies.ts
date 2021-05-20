@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 import { MeaningfulDependency, Config } from './shared-types'
 import { toMap } from './util/to-map'
 import { DEPENDENCIES } from './constants'

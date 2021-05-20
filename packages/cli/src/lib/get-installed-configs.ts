@@ -24,8 +24,5 @@ export function getInstalledConfings({ eslintConfigMeta }: Params): Config[] {
     return []
   }
 
-  return content.extends
-    .map(String)
-    .filter(isFromConfigKit)
-    .map(toConfigName)
+  return content.extends.map(String).filter(isFromConfigKit).map(toConfigName)
 }

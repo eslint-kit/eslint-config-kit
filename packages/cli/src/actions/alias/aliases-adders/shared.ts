@@ -10,7 +10,7 @@ export const combineMerge = (target: any, source: any, options: any): any[] => {
       destination[index] = options.cloneUnlessOtherwiseSpecified(item, options)
     } else if (options.isMergeableObject(item)) {
       destination[index] = merge(target[index], item, options)
-    } else if (target.indexOf(item) === -1) {
+    } else if (!target.includes(item)) {
       destination.push(item)
     }
   })
