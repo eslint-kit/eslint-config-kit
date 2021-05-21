@@ -34,6 +34,7 @@ export interface Json {
 }
 
 export interface PackageJson extends Json {
+  name?: string
   eslint?: Json
   prettier?: Json
   dependencies?: Record<string, string>

@@ -3,22 +3,7 @@ import program from 'commander'
 import glob from 'glob-promise'
 import { PackageJson } from '../shared-types'
 import { MESSAGES } from '../ui/messages'
-
-function getLastSegment(path: string): string {
-  let result = ''
-
-  for (let i = path.length - 1; i > 0; i--) {
-    const char = path[i]
-
-    if (char === '/' || char === '\\') {
-      break
-    }
-
-    result = path[i] + result
-  }
-
-  return result
-}
+import { findPackageJson } from './find-package-json'
 
 async function findWorkspaceDirectory(
   workspace: string,
@@ -28,9 +13,22 @@ async function findWorkspaceDirectory(
     const directories = await glob(workspaceGlob)
 
     for (const directory of directories) {
-      const lastSegment = getLastSegment(directory)
-      if (lastSegment !== workspace) continue
-      return path.join(process.cwd(), directory)
+      const fullPath = path.join(process.cwd(), directory)
+
+      let packageJson
+      try {
+        packageJson = await findPackageJson({
+          rootDir: fullPath,
+        })
+      } catch {
+        continue
+      }
+
+      if (packageJson.name !== workspace) {
+        continue
+      }
+
+      return fullPath
     }
   }
 
