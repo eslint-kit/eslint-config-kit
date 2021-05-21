@@ -30,6 +30,7 @@ Here is the example for TypeScript React project:
 ```js
 {
   "extends": [
+    "@eslint-kit/patch",
     "@eslint-kit/base",
     "@eslint-kit/typescript",
     "@eslint-kit/react"
@@ -68,7 +69,7 @@ Learn more on [@eslint-kit/cli page](https://github.com/eslint-kit/cli).
 1. Install basic dependencies:
 
    ```sh
-   npm i -D eslint @eslint-kit/eslint-config-base
+   npm i -D eslint @eslint-kit/eslint-config-patch @eslint-kit/eslint-config-base
    ```
 
 2. Create `.eslintrc` file in the root of your project.
@@ -77,7 +78,10 @@ Learn more on [@eslint-kit/cli page](https://github.com/eslint-kit/cli).
 
    ```js
    {
-     "extends": ["@eslint-kit/base"]
+     "extends": [
+       "@eslint-kit/patch",
+       "@eslint-kit/base"
+     ]
    }
    ```
 
@@ -107,6 +111,7 @@ Installation:
    ```diff
    {
      "extends": [
+       "@eslint-kit/patch",
        "@eslint-kit/base",
    +   "@eslint-kit/prettier"
      ]
@@ -153,6 +158,7 @@ Installation:
    {
    + "parser": "babel-eslint",
      "extends": [
+       "@eslint-kit/patch",
        "@eslint-kit/base",
    +   "@eslint-kit/react"
      ]
@@ -179,6 +185,7 @@ Installation:
    ```diff
    {
      "extends": [
+       "@eslint-kit/patch",
        "@eslint-kit/base",
    +   "@eslint-kit/node"
      ]
@@ -206,6 +213,7 @@ Installation:
    {
    + "parser": "@typescript-eslint/parser",
      "extends": [
+       "@eslint-kit/patch",
        "@eslint-kit/base",
    +   "@eslint-kit/typescript"
      ]
@@ -416,6 +424,7 @@ You should specify your tsconfig location manually in `parserOptions`:
 +   "project": ["*/tsconfig.json"]
 + },
   "extends": [
+    "@eslint-kit/patch",
     "@eslint-kit/base",
     "@eslint-kit/typescript"
   ]
@@ -433,6 +442,7 @@ module.exports = {
     project: [path.resolve(__dirname, './tsconfig.json')] // or your tsconfig location
   },
   extends: [
+    '@eslint-kit/patch',
     '@eslint-kit/base',
     '@eslint-kit/typescript'
   ]
