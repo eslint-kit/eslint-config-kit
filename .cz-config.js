@@ -69,6 +69,7 @@ function byPriority(priorities) {
 const types = [
   { value: "feat", name: "feat", description: "A new feature" },
   { value: "fix", name: "fix", description: "A bug fix" },
+  { value: "changelog", name: "changelog", description: "Add a changeset for package(s)" },
   { value: "docs", name: "docs", description: "Documentation only changes" },
   {
     value: "style",
