@@ -1,4 +1,4 @@
-import { PackageJson } from './shared-types'
+import { PackageJson } from '../shared-types'
 
 interface Params {
   packageJson: PackageJson

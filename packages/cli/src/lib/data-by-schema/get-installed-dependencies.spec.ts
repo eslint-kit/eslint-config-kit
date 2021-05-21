@@ -1,6 +1,6 @@
-import { PackageJson } from './shared-types'
+import { PackageJson } from '../shared-types'
+import { DEPENDENCIES } from '../constants'
 import { getInstalledDependencies } from './get-installed-dependencies'
-import { DEPENDENCIES } from './constants'
 
 describe('getInstalledDependencies', () => {
   it('should work correctly', () => {

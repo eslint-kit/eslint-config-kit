@@ -4,7 +4,7 @@ import {
   Config,
   PrettierConfigMeta,
   PackageManager,
-} from './shared-types'
+} from '../shared-types'
 import { findPackageJson } from './find-package-json'
 import { getInstalledDependencies } from './get-installed-dependencies'
 import { findEslintConfig } from './find-eslint-config'

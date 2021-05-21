@@ -1,8 +1,8 @@
 import path from 'path'
 import program from 'commander'
 import glob from 'glob-promise'
-import { PackageJson } from './shared-types'
-import { MESSAGES } from './ui/messages'
+import { PackageJson } from '../shared-types'
+import { MESSAGES } from '../ui/messages'
 
 function getLastSegment(path: string): string {
   let result = ''

@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { getDataBySchema } from '../../lib/get-data-by-schema'
+import { getDataBySchema } from '../../lib/data-by-schema'
 import { updateEslintConfig } from '../../lib/update-eslint-config'
 import { log } from '../../lib/util/log'
 import { MESSAGES } from '../../lib/ui/messages'

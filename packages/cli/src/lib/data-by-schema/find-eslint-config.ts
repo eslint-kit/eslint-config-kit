@@ -1,9 +1,9 @@
 import path from 'path'
 import YAML from 'yamljs'
-import { Json, EslintConfigMeta, PackageJson } from './shared-types'
-import { arrayToString } from './util/array-to-string'
-import { FILENAMES } from './constants'
-import { FileSystemReader } from './readers'
+import { Json, EslintConfigMeta, PackageJson } from '../shared-types'
+import { arrayToString } from '../util/array-to-string'
+import { FILENAMES } from '../constants'
+import { FileSystemReader } from '../readers'
 
 const unsupportedConfigFileNames = ['.eslintrc.js', '.eslintrc.cjs']
 
@@ -68,7 +68,7 @@ export async function findEslintConfig({
   if (isUnsupportedFormatUsed) {
     throw new Error(
       arrayToString(unsupportedConfigFileNames) +
-        'is not supported.\n' +
+        ' is not supported.\n' +
         'Available config files are: ' +
         arrayToString(configFileNames)
     )

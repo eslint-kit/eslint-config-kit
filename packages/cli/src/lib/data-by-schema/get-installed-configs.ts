@@ -1,5 +1,5 @@
-import { EslintConfigMeta, Config } from './shared-types'
-import { isFromConfigKit, toConfigName } from './config-name-helpers'
+import { EslintConfigMeta, Config } from '../shared-types'
+import { isFromConfigKit, toConfigName } from '../config-name-helpers'
 
 interface Params {
   eslintConfigMeta: EslintConfigMeta

@@ -1,5 +1,5 @@
-import { PrettierConfigMeta } from './shared-types'
-import { FILENAMES } from './constants'
+import { PrettierConfigMeta } from '../shared-types'
+import { FILENAMES } from '../constants'
 
 const configFileNames = [
   FILENAMES.PRETTIER,

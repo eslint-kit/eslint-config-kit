@@ -1,4 +1,4 @@
-import { FileSystemReader } from './readers'
+import { FileSystemReader } from '../readers'
 
 interface Params {
   rootDir: string
