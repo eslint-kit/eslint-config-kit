@@ -5,6 +5,7 @@ import {
   PrettierConfigMeta,
   PackageManager,
 } from '../shared-types'
+import { checkIfTsShouldBeUsed } from './check-if-ts-should-be-used'
 import { findPackageJson } from './find-package-json'
 import { getInstalledDependencies } from './get-installed-dependencies'
 import { findEslintConfig } from './find-eslint-config'
@@ -12,8 +13,9 @@ import { getInstalledConfings } from './get-installed-configs'
 import { getPackageManager } from './get-package-manager'
 import { findPrettierConfig } from './find-prettier-config'
 import { getRootDirFileNames } from './get-root-dir-file-names'
-import { checkIfTsShouldBeUsed } from './check-if-ts-should-be-used'
 import { getRootDir } from './get-root-dir'
+
+class DataAcquiringError extends Error {}
 
 type Keys<T> = Array<keyof T>
 
@@ -22,13 +24,17 @@ type Unpromisify<T> = {
 }
 
 async function unpromisify<
-  T extends Record<string, unknown>,
+  T extends Record<string, unknown | Promise<unknown>>,
   O extends Unpromisify<T>
 >(object: T): Promise<O> {
   const result: Partial<O> = {}
 
   for (const key in object) {
-    ;(result[key] as unknown) = await object[key]
+    const individualResult = await object[key]
+    if (individualResult instanceof DataAcquiringError) {
+      throw individualResult
+    }
+    result[key] = individualResult as O[typeof key]
   }
 
   return result as O
@@ -144,19 +150,23 @@ async function getDataBySchemaInternal<
       dependenciesSchema,
       results,
       providedDependencies
-    ).then((resolverInput) => {
-      const requestedProvidedDependencies: Partial<ProvidedDependencies> = {}
+    )
+      .then((resolverInput) => {
+        const requestedProvidedDependencies: Partial<ProvidedDependencies> = {}
 
-      for (const dependency of fromProvidedDependencies) {
-        requestedProvidedDependencies[dependency] =
-          providedDependencies[dependency]
-      }
+        for (const dependency of fromProvidedDependencies) {
+          requestedProvidedDependencies[dependency] =
+            providedDependencies[dependency]
+        }
 
-      return resolver({
-        ...requestedProvidedDependencies,
-        ...resolverInput,
+        return resolver({
+          ...requestedProvidedDependencies,
+          ...resolverInput,
+        })
       })
-    })
+      .catch((error) => {
+        return new DataAcquiringError(error.message)
+      })
   }
 
   for (const field in schema) {
