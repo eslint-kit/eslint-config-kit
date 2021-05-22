@@ -11,7 +11,7 @@
     "build": "lerna run build",
     "test": "lerna run test",
     "commit": "git-cz",
-    "lint": "eslint \"packages/**/*.ts\" \"shared/**/*.ts\" --ext .ts --fix",
+    "lint": "eslint \"packages/**/*.ts\" \"shared/**/*.ts\" --fix",
     "prepare": "husky install"
   },
   "repository": {
@@ -59,7 +59,7 @@
     "jest": "^24.9.0",
     "lerna": "^3.22.1",
     "lint-staged": "^11.0.0",
-    "prettier": "2.2.1",
+    "prettier": "2.3.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.16.0",
     "rollup-plugin-babel": "^4.4.0",

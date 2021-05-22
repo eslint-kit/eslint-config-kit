@@ -35,13 +35,11 @@ export class ConfigAction {
       installedDependencies: true,
     })
 
-    const {
-      updatedConfigs,
-      shouldAddRecommendedPrettierConfig,
-    } = await askQuestions({
-      prettierConfigMeta,
-      installedConfigs,
-    })
+    const { updatedConfigs, shouldAddRecommendedPrettierConfig } =
+      await askQuestions({
+        prettierConfigMeta,
+        installedConfigs,
+      })
 
     const { useTs } = await getDataBySchema(
       {

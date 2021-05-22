@@ -41,5 +41,5 @@ export function asyncMerge<T extends (...args: any[]) => any>(fn: T): T {
     return job
   }
 
-  return (run as unknown) as T
+  return run as unknown as T
 }

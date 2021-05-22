@@ -61,9 +61,8 @@ export async function findEslintConfig({
    * It remains only to check if the format is unsupported
    */
 
-  const isUnsupportedFormatUsed = unsupportedConfigFileNames.includes(
-    configFileName
-  )
+  const isUnsupportedFormatUsed =
+    unsupportedConfigFileNames.includes(configFileName)
 
   if (isUnsupportedFormatUsed) {
     throw new Error(
