@@ -5,9 +5,15 @@ import {
   greaterOrEquals,
   lower,
   getMajor,
+  toVersion,
 } from './dependency-version-compare'
 
 describe('dependency version compare', () => {
+  test('toVersion', () => {
+    expect(toVersion('^17.0.2')).toBe('17.0.2')
+    expect(toVersion('17.0.2')).toBe('17.0.2')
+  })
+
   test('getMajor', () => {
     expect(getMajor('17.0.3')).toBe(17)
     expect(getMajor('^16.0.3')).toBe(16)

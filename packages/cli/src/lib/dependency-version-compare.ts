@@ -10,12 +10,11 @@ import {
 
 class InvalidVersionError extends Error {
   constructor() {
-    super()
-    this.message = 'Invalid version'
+    super('Invalid version')
   }
 }
 
-function toVersion(versionOrRange: string): string {
+export function toVersion(versionOrRange: string): string {
   if (valid(versionOrRange)) {
     return versionOrRange
   }

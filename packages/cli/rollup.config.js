@@ -13,12 +13,24 @@ module.exports = {
   plugins: [
     typescript(),
     json(),
-    commonjs(),
-    nodeResolve({
-      preferBuiltins: true
+    commonjs({
+      include: [/node_modules/],
     }),
     terserPlugin({
       ecma: 2015,
     }),
+  ],
+  external: [
+    'commander',
+    'chalk',
+    'path',
+    'yamljs',
+    'ora',
+    'inquirer',
+    'semver',
+    'fs',
+    'glob-promise',
+    'deepmerge',
+    'child_process',
   ],
 }
