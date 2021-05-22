@@ -2,23 +2,21 @@ name: Test packages
 
 on:
   pull_request:
-    # branches: master
-    branches-ignore: '**'
+    branches:
+      - master
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
+      - name: Checkout Repo
+        uses: actions/checkout@master
 
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@master
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - name: Install Dependencies
         run: yarn
