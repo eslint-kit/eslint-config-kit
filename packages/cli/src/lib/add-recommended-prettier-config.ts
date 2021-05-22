@@ -14,7 +14,6 @@ export async function addRecommendedPrettierConfig({
     singleQuote: true,
     tabWidth: 2,
     quoteProps: 'consistent',
-    trailingComma: 'es5',
     endOfLine: 'lf',
   }
 

@@ -29,7 +29,7 @@ export const MAX_VERSIONS: MaxVersions = {
   '@typescript-eslint/parser': '4.15.0',
   'eslint-import-resolver-alias': '1.1.2',
   'eslint-import-resolver-typescript': '2.3.0',
-  'prettier': '2.2.1',
+  'prettier': '2.3.0',
   '@eslint-kit/eslint-config-base': null,
   '@eslint-kit/eslint-config-node': null,
   '@eslint-kit/eslint-config-prettier': null,
