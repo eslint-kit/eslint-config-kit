@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 7.0.2
+
+### Patch Changes
+
+- 295697e: Fix CLI build using rollup
+
 ## 7.0.1
 
 ### Patch Changes
