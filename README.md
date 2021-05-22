@@ -37,8 +37,8 @@ Check out [our documentation](https://eslint-kit.gitbook.io/eslint-kit/).
 
 ## Common issues
 
-Check out [Common issues](https://eslint-kit.gitbook.io/eslint-kit/common-issues) section in docs.
+Check out the [Common issues](https://eslint-kit.gitbook.io/eslint-kit/common-issues) section in docs.
 
 ## Contributing
 
-Check out [Contributing](https://eslint-kit.gitbook.io/eslint-kit/contributing) section in docs.
+Check out the [Contributing](https://eslint-kit.gitbook.io/eslint-kit/contributing) section in docs.
