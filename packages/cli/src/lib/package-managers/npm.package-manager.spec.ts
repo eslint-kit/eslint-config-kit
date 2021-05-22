@@ -23,7 +23,7 @@ describe('NpmPackageManager', () => {
         run: () => Promise.resolve(),
       }
 
-      return (mockedRunner as unknown) as NpmRunner
+      return mockedRunner as unknown as NpmRunner
     })
 
     packageManager = new NpmPackageManager()

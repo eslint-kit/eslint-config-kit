@@ -23,7 +23,7 @@ describe('YarnPackageManager', () => {
         run: () => Promise.resolve(),
       }
 
-      return (mockedRunner as unknown) as YarnRunner
+      return mockedRunner as unknown as YarnRunner
     })
 
     packageManager = new YarnPackageManager()
