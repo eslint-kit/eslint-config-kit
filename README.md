@@ -34,3 +34,11 @@ Here is the example for TypeScript React project:
 ## Usage
 
 Check out [our documentation](https://eslint-kit.gitbook.io/eslint-kit/).
+
+## Common issues
+
+Check out [Common issues](hhttps://eslint-kit.gitbook.io/eslint-kit/common-issues) section in docs.
+
+## Contributing
+
+Check out [Contributing](https://eslint-kit.gitbook.io/eslint-kit/contributing) section in docs.
