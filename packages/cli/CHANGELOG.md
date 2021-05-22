@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 7.1.0
+
+### Minor Changes
+
+- 89b5ae6: Update prettier to v3.0.0
+
 ## 7.0.2
 
 ### Patch Changes
