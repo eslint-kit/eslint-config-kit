@@ -34,7 +34,8 @@ Here is the example for TypeScript React project:
     "@eslint-kit/base",
     "@eslint-kit/typescript",
     "@eslint-kit/react"
-  ]
+  ],
+  "parser": "@typescript-eslint/parser"
 }
 ```
 
