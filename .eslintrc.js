@@ -1,4 +1,4 @@
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@eslint-kit/eslint-config-patch')
 
 module.exports = {
   "root": true,
