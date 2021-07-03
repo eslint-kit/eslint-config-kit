@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 7.2.0
+
+### Minor Changes
+
+- 72178ef: Add upgrade command
+
 ## 7.1.0
 
 ### Minor Changes
