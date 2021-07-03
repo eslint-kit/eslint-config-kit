@@ -2,7 +2,6 @@ import ora from 'ora'
 import chalk from 'chalk'
 import program from 'commander'
 import {
-  Config,
   MaxVersions,
   MeaningfulDependency,
   PackageManager,
@@ -11,7 +10,6 @@ import { NpmPackageManager, YarnPackageManager } from './package-managers'
 import { MAX_VERSIONS } from './constants'
 import { MESSAGES } from './ui/messages'
 import { log } from './util/log'
-import { toConfigPackage } from './config-name-helpers'
 
 const PACKAGE_MANAGERS = {
   npm: NpmPackageManager,
@@ -59,10 +57,10 @@ export async function upgradeDependenciesToLatest({
     return
   }
 
-  const exactVersion: string[] = []
+  const latestVersions: string[] = []
 
   for (const dependency of dependencies) {
-    exactVersion.push(`${dependency}@latest`)
+    latestVersions.push(`${dependency}@latest`)
   }
 
   const packageManager = new PACKAGE_MANAGERS[packageManagerName]()
@@ -74,13 +72,12 @@ export async function upgradeDependenciesToLatest({
   try {
     const { workspace } = program.opts()
 
-    if (exactVersion.length > 0) {
+    if (latestVersions.length > 0) {
       spinner.start(chalk.yellow(MESSAGES.PACKAGE_MANAGER.UPGRADING))
       await packageManager.install({
-        dependencies: exactVersion,
+        dependencies: latestVersions,
         saveType: 'dev',
         workspace,
-        exact: true,
       })
       await spinner.showResult(chalk.green(MESSAGES.PACKAGE_MANAGER.INSTALLED))
     }
