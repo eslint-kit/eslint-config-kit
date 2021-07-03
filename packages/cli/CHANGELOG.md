@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 7.2.1
+
+### Patch Changes
+
+- f809b10: do not set latest versions as exact
+
 ## 7.2.0
 
 ### Minor Changes
