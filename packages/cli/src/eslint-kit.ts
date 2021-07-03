@@ -1,5 +1,10 @@
 import commander from 'commander'
-import { ConfigCommand, AliasCommand, CheckCommand } from './commands'
+import {
+  ConfigCommand,
+  AliasCommand,
+  CheckCommand,
+  UpgradeCommand,
+} from './commands'
 
 function bootstrap(): void {
   const program = commander
@@ -17,6 +22,7 @@ function bootstrap(): void {
   ConfigCommand.load(program)
   AliasCommand.load(program)
   CheckCommand.load(program)
+  UpgradeCommand.load(program)
 
   program.parse(process.argv)
 }

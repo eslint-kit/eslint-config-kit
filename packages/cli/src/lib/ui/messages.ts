@@ -19,6 +19,7 @@ export const MESSAGES = {
       "Please don't touch package.json during the dependencies installation",
     INSTALLING: 'Installing dependencies..',
     INSTALLING_EXACT: 'Installing exact dependencies..',
+    UPGRADING: 'Upgrading dependencies..',
     INSTALLED: 'Successfully installed dependencies',
     REMOVING: 'Removing dependencies..',
     REMOVED: 'Successfully removed dependencies',

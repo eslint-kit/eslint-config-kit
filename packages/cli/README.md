@@ -71,6 +71,16 @@ $ npx @eslint-kit/cli config
 
 Accepts all [common options](#common-options).
 
+### Upgrade
+
+Upgrade @eslint-kit configs to their latest versions.
+
+```
+$ npx @eslint-kit/cli upgrade
+```
+
+Accepts all [common options](#common-options).
+
 ### Setup aliases
 
 Just enter aliases in JSON format and CLI will take care of it.
