@@ -1,5 +1,15 @@
 # @eslint-kit/cli
 
+## 8.0.0
+
+### Major Changes
+
+- 425e29e: support prettier import sort plugin
+
+### Minor Changes
+
+- 31e4953: migrate to prettier import sort plugin
+
 ## 7.2.2
 
 ### Patch Changes
