@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 7.2.2
+
+### Patch Changes
+
+- 65ff139: Fix issue with installation progress
+
 ## 7.2.1
 
 ### Patch Changes
