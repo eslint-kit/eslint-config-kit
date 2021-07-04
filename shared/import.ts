@@ -9,6 +9,7 @@ export const importSettings = {
   },
   'import/core-modules': [],
   'import/ignore': ['\\.(coffee|scss|css|less|hbs|svg|json)$'],
+  'import/internal-regex': '^@types/',
 }
 
 interface ImportRules {
