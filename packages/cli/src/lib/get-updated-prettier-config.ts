@@ -1,8 +1,4 @@
-import {
-  AliasesMeta,
-  PrettierConfigMeta,
-  PrettierConfig,
-} from '../../lib/shared-types'
+import { AliasesMeta, PrettierConfigMeta, PrettierConfig } from './shared-types'
 
 function withNesting(regex: string): string {
   return regex + '(\\/(.*))?$'
@@ -25,6 +21,10 @@ export function getUpdatedPrettierConfig({
 
   if (!updatedConfig.importOrder) {
     updatedConfig.importOrder = ['^[./]']
+  }
+
+  if (!updatedConfig.experimentalBabelParserPluginsList) {
+    updatedConfig.experimentalBabelParserPluginsList = ['jsx', 'typescript']
   }
 
   const newRegexps = aliasesMeta.aliasMap.map(([name]) => {

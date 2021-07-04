@@ -66,6 +66,7 @@ export type EslintConfigMeta =
 
 export interface PrettierConfig extends Json {
   importOrder?: string[]
+  experimentalBabelParserPluginsList?: Array<'jsx' | 'typescript' | 'flow'>
 }
 
 export type PrettierConfigMeta =

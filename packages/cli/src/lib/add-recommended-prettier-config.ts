@@ -38,6 +38,7 @@ export async function addRecommendedPrettierConfig({
     quoteProps: 'consistent',
     endOfLine: 'lf',
     importOrder,
+    experimentalBabelParserPluginsList: ['jsx', 'typescript'],
   }
 
   return FileSystemReader.writeFile(
