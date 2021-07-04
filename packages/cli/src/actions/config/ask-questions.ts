@@ -176,7 +176,7 @@ export async function askQuestions({
       name: 'shouldAddRecommendedPrettierConfig',
       message: 'Add recommended prettier config? (.prettierrc)',
       when: () => {
-        if (prettierConfigMeta.isExist) {
+        if (prettierConfigMeta.found) {
           return false
         }
 

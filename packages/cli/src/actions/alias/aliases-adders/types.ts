@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { Options } from 'deepmerge'
 
 export type CustomMerge = (

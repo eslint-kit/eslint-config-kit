@@ -4,5 +4,9 @@
   "tabWidth": 2,
   "quoteProps": "consistent",
   "endOfLine": "lf",
-  "importOrder": ["^[./]"]
+  "importOrder": [
+    "^(child_process|crypto|events|fs|http|https|os|path)(\/(.*))?$",
+    "^@app(\/(.*))?$",
+    "^[./]"
+  ]
 }

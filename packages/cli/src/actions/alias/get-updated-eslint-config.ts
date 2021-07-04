@@ -17,7 +17,7 @@ export function getUpdatedEslintConfig({
   let updatedConfig = Object.assign({}, content)
 
   if (useTs) {
-    updatedConfig = tsAliasesAdder(updatedConfig, aliasesMeta)
+    updatedConfig = tsAliasesAdder(updatedConfig)
   } else {
     updatedConfig = jsAliasesAdder(updatedConfig, aliasesMeta)
   }

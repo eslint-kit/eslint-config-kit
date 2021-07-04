@@ -1,24 +1,67 @@
-import { PrettierConfigMeta } from '../shared-types'
+import path from 'path'
+import YAML from 'yamljs'
 import { FILENAMES } from '../constants'
+import { FileSystemReader } from '../readers'
+import { PrettierConfigMeta } from '../shared-types'
 
-const configFileNames = [
-  FILENAMES.PRETTIER,
-  'prettier.config.js',
+const unsupportedConfigFileNames = [
   '.prettierrc.js',
-  '.prettierrc.yaml',
+  'prettier.config.js',
   '.prettierrc.toml',
 ]
 
+const yamlConfigFileNames = ['.prettierrc.yaml']
+
+const configFileNames = [
+  FILENAMES.PRETTIER,
+  ...yamlConfigFileNames,
+  ...unsupportedConfigFileNames,
+]
+
 interface Params {
+  rootDir: string
   rootDirFileNames: string[]
 }
 
-export function findPrettierConfig({
+export async function findPrettierConfig({
+  rootDir,
   rootDirFileNames,
-}: Params): PrettierConfigMeta {
-  const isExist = configFileNames.some((configFileName) => {
+}: Params): Promise<PrettierConfigMeta> {
+  const fileName = configFileNames.find((configFileName) => {
     return rootDirFileNames.includes(configFileName)
   })
 
-  return { isExist }
+  if (!fileName) return { found: false }
+
+  const isUnsupportedFormatUsed = unsupportedConfigFileNames.includes(fileName)
+
+  if (isUnsupportedFormatUsed) {
+    return { found: true, supported: false }
+  }
+
+  const configPath = path.resolve(rootDir, fileName)
+  const yaml = yamlConfigFileNames.includes(fileName)
+
+  if (yaml) {
+    const content = YAML.load(configPath)
+
+    return {
+      found: true,
+      supported: true,
+      yaml: true,
+      fileName,
+      content,
+    }
+  }
+
+  const buffer = await FileSystemReader.readFile(configPath)
+  const content = JSON.parse(buffer.toString())
+
+  return {
+    found: true,
+    supported: true,
+    yaml: false,
+    fileName,
+    content,
+  }
 }

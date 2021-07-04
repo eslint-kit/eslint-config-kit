@@ -1,4 +1,4 @@
-import { AliasesMeta, AliasMapItem, PathGroup } from './shared-types'
+import { AliasesMeta, AliasMapItem } from './shared-types'
 
 function normalizeAliasValue(value: string): string {
   if (value.endsWith('/*')) return value.slice(0, -2)
@@ -10,7 +10,6 @@ export function generateAliasesMeta(
   paths: Record<string, string>
 ): AliasesMeta {
   const aliasMap: AliasMapItem[] = []
-  const pathGroups: PathGroup[] = []
 
   for (const aliasName in paths) {
     const aliasPath = paths[aliasName]
@@ -21,33 +20,7 @@ export function generateAliasesMeta(
     ]
 
     aliasMap.push([normalizedAliasName, normalizedAliasPath])
-
-    const isFile = /^.*[\w,\s-]+\.[A-Za-z]+$/.test(normalizedAliasPath)
-
-    if (isFile) {
-      pathGroups.push({
-        pattern: normalizedAliasName,
-        group: 'internal',
-        position: 'before',
-      })
-    } else {
-      pathGroups.push(
-        {
-          pattern: normalizedAliasName,
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: normalizedAliasName + '/**',
-          group: 'internal',
-          position: 'before',
-        }
-      )
-    }
   }
 
-  return {
-    aliasMap,
-    pathGroups,
-  }
+  return { aliasMap }
 }

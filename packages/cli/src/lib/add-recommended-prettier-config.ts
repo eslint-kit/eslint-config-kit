@@ -6,6 +6,28 @@ interface Params {
   rootDir: string
 }
 
+// function withNesting(regex: string): string {
+//   return regex + '(\\/(.*))?$'
+// }
+
+// const builtInNodeModulesString = [
+//   'child_process',
+//   'crypto',
+//   'events',
+//   'fs',
+//   'http',
+//   'https',
+//   'os',
+//   'path',
+// ].join('|')
+
+// const buildInNodeModulesRegex = withNesting(`^(${builtInNodeModulesString})`)
+
+const importOrder = [
+  // buildInNodeModulesRegex,
+  '^[./]',
+]
+
 export async function addRecommendedPrettierConfig({
   rootDir,
 }: Params): Promise<void> {
@@ -15,7 +37,7 @@ export async function addRecommendedPrettierConfig({
     tabWidth: 2,
     quoteProps: 'consistent',
     endOfLine: 'lf',
-    importOrder: ['^[./]'],
+    importOrder,
   }
 
   return FileSystemReader.writeFile(

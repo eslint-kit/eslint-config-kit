@@ -8,18 +8,6 @@ describe('jsAliasesAdder', () => {
 
     const aliasesMeta: AliasesMeta = {
       aliasMap: [['@app', './src']],
-      pathGroups: [
-        {
-          pattern: '@app',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@app/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     const expectedResult: Json = {
@@ -30,33 +18,6 @@ describe('jsAliasesAdder', () => {
             extensions: ['.js', '.jsx', '.json'],
           },
         },
-      },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@app',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@app/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
       },
     }
 
@@ -73,49 +34,10 @@ describe('jsAliasesAdder', () => {
           },
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@app',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@app/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
-      },
     }
 
     const aliasesMeta: AliasesMeta = {
       aliasMap: [['@folder', './src/folder']],
-      pathGroups: [
-        {
-          pattern: '@folder',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@folder/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     const expectedResult: Json = {
@@ -129,43 +51,6 @@ describe('jsAliasesAdder', () => {
             extensions: ['.js', '.jsx', '.json'],
           },
         },
-      },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@app',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@app/**',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
       },
     }
 
@@ -186,25 +71,10 @@ describe('jsAliasesAdder', () => {
           something: 123,
         },
       },
-      rules: {
-        'import/order': ['warn'],
-      },
     }
 
     aliasesMeta = {
       aliasMap: [['@folder', './src/folder']],
-      pathGroups: [
-        {
-          pattern: '@folder',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@folder/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     expectedResult = {
@@ -216,33 +86,6 @@ describe('jsAliasesAdder', () => {
           },
           something: 123,
         },
-      },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@folder',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
       },
     }
 
@@ -259,37 +102,10 @@ describe('jsAliasesAdder', () => {
           test: 4324,
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'internal',
-              'external',
-              'parent',
-              'sibling',
-              'index',
-            ],
-          },
-        ],
-      },
     }
 
     aliasesMeta = {
       aliasMap: [['@folder', './src/folder']],
-      pathGroups: [
-        {
-          pattern: '@folder',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@folder/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     expectedResult = {
@@ -303,33 +119,6 @@ describe('jsAliasesAdder', () => {
         'other': {
           test: 4324,
         },
-      },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'internal',
-              'external',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@folder',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
       },
     }
 

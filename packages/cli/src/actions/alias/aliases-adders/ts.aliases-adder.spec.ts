@@ -1,27 +1,10 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 import { DEPENDENCIES } from '../../../lib/constants'
-import { Json, AliasesMeta } from '../../../lib/shared-types'
+import { Json } from '../../../lib/shared-types'
 import { tsAliasesAdder } from './ts.aliases-adder'
 
 describe('tsAliasesAdder', () => {
   it('should successfully add aliases when currentConfig is empty', () => {
     const currentConfig: Json = {}
-
-    const aliasesMeta: AliasesMeta = {
-      aliasMap: [['@app', './src']],
-      pathGroups: [
-        {
-          pattern: '@app',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@app/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
-    }
 
     const expectedResult: Json = {
       settings: {
@@ -34,36 +17,9 @@ describe('tsAliasesAdder', () => {
           },
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@app',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@app/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
-      },
     }
 
-    expect(tsAliasesAdder(currentConfig, aliasesMeta)).toEqual(expectedResult)
+    expect(tsAliasesAdder(currentConfig)).toEqual(expectedResult)
   })
 
   it('should successfully add aliases when currentConfig already has aliases', () => {
@@ -78,49 +34,6 @@ describe('tsAliasesAdder', () => {
           },
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@app',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@app/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
-      },
-    }
-
-    const aliasesMeta: AliasesMeta = {
-      aliasMap: [['@folder', './src/folder']],
-      pathGroups: [
-        {
-          pattern: '@folder',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@folder/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     const expectedResult: Json = {
@@ -134,51 +47,13 @@ describe('tsAliasesAdder', () => {
           },
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@app',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@app/**',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
-      },
     }
 
-    expect(tsAliasesAdder(currentConfig, aliasesMeta)).toEqual(expectedResult)
+    expect(tsAliasesAdder(currentConfig)).toEqual(expectedResult)
   })
 
   it('should successfully add aliases when currentConfig already has some import plugin settings/rules', () => {
     let currentConfig: Json
-    let aliasesMeta: AliasesMeta
     let expectedResult: Json
 
     currentConfig = {
@@ -192,25 +67,6 @@ describe('tsAliasesAdder', () => {
           },
         },
       },
-      rules: {
-        'import/order': ['warn'],
-      },
-    }
-
-    aliasesMeta = {
-      aliasMap: [['@folder', './src/folder']],
-      pathGroups: [
-        {
-          pattern: '@folder',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@folder/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     expectedResult = {
@@ -226,36 +82,9 @@ describe('tsAliasesAdder', () => {
           },
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@folder',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
-      },
     }
 
-    expect(tsAliasesAdder(currentConfig, aliasesMeta)).toEqual(expectedResult)
+    expect(tsAliasesAdder(currentConfig)).toEqual(expectedResult)
 
     currentConfig = {
       settings: {
@@ -269,37 +98,6 @@ describe('tsAliasesAdder', () => {
           test: 4324,
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'internal',
-              'external',
-              'parent',
-              'sibling',
-              'index',
-            ],
-          },
-        ],
-      },
-    }
-
-    aliasesMeta = {
-      aliasMap: [['@folder', './src/folder']],
-      pathGroups: [
-        {
-          pattern: '@folder',
-          group: 'internal',
-          position: 'before',
-        },
-        {
-          pattern: '@folder/**',
-          group: 'internal',
-          position: 'before',
-        },
-      ],
     }
 
     expectedResult = {
@@ -317,35 +115,8 @@ describe('tsAliasesAdder', () => {
           test: 4324,
         },
       },
-      rules: {
-        'import/order': [
-          'warn',
-          {
-            groups: [
-              'builtin',
-              'internal',
-              'external',
-              'parent',
-              'sibling',
-              'index',
-            ],
-            pathGroups: [
-              {
-                pattern: '@folder',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '@folder/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-          },
-        ],
-      },
     }
 
-    expect(tsAliasesAdder(currentConfig, aliasesMeta)).toEqual(expectedResult)
+    expect(tsAliasesAdder(currentConfig)).toEqual(expectedResult)
   })
 })

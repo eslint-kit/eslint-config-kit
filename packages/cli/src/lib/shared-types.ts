@@ -64,21 +64,30 @@ export type EslintConfigMeta =
       content: EslintConfig
     }
 
-export interface PrettierConfigMeta {
-  isExist: boolean
+export interface PrettierConfig extends Json {
+  importOrder?: string[]
 }
+
+export type PrettierConfigMeta =
+  | {
+      found: false
+    }
+  | {
+      found: true
+      supported: false
+    }
+  | {
+      found: true
+      supported: true
+      yaml: boolean
+      fileName: string
+      content: PrettierConfig
+    }
 
 export type AliasMapItem = [string, string]
 
-export interface PathGroup {
-  pattern: string
-  group: 'index' | 'sibling' | 'parent' | 'internal' | 'external' | 'builtin'
-  position: 'before' | 'after'
-}
-
 export interface AliasesMeta {
   aliasMap: AliasMapItem[]
-  pathGroups: PathGroup[]
 }
 
 export type Config =
