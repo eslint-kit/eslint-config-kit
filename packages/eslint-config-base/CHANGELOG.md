@@ -1,5 +1,11 @@
 # @eslint-kit/eslint-config-base
 
+## 5.0.1
+
+### Patch Changes
+
+- 2e2f014: attempt to fix import/no-extraneous-dependencies issue
+
 ## 5.0.0
 
 ### Major Changes
