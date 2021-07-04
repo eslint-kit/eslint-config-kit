@@ -1,5 +1,11 @@
 # @eslint-kit/eslint-config-base
 
+## 5.0.2
+
+### Patch Changes
+
+- 28d3eb8: temporary remove import/no-extraneous-dependencies since it's working badly
+
 ## 5.0.1
 
 ### Patch Changes
