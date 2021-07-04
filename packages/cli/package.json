@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/cli",
-  "version": "7.2.1",
+  "version": "7.2.2",
   "description": "A cli tool for @eslint-kit configs",
   "engines": {
     "node": ">= 8.9.0",
