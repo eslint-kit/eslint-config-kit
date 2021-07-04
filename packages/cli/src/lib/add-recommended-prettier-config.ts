@@ -15,6 +15,7 @@ export async function addRecommendedPrettierConfig({
     tabWidth: 2,
     quoteProps: 'consistent',
     endOfLine: 'lf',
+    importOrder: ['^[./]'],
   }
 
   return FileSystemReader.writeFile(

@@ -72,10 +72,4 @@ export const importRules: ImportRules = {
   'import/no-self-import': 'error',
   'import/no-cycle': ['error', { maxDepth: Number.POSITIVE_INFINITY }],
   'import/no-useless-path-segments': ['warn', { commonjs: true }],
-  'import/order': [
-    'warn',
-    {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-    },
-  ],
 }
