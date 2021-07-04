@@ -39,7 +39,7 @@ function createSpinner() {
 
   return {
     start: spin,
-    stop: spinner.stop,
+    stop: () => spinner.stop(),
     showResult,
   }
 }
