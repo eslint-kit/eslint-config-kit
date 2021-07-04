@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 8.0.1
+
+### Patch Changes
+
+- 393c5f3: better experience when upgrading the prettier plugin
+
 ## 8.0.0
 
 ### Major Changes
