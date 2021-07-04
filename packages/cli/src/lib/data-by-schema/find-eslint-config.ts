@@ -1,9 +1,9 @@
-import path from 'path'
 import YAML from 'yamljs'
-import { Json, EslintConfigMeta, PackageJson } from '../shared-types'
-import { arrayToString } from '../util/array-to-string'
+import path from 'path'
 import { FILENAMES } from '../constants'
 import { FileSystemReader } from '../readers'
+import { Json, EslintConfigMeta, PackageJson } from '../shared-types'
+import { arrayToString } from '../util/array-to-string'
 
 const unsupportedConfigFileNames = ['.eslintrc.js', '.eslintrc.cjs']
 

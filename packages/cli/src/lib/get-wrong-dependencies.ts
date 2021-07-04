@@ -1,15 +1,15 @@
+import { MAX_VERSIONS } from './constants'
+import {
+  isDependencyLimited,
+  isDependencyMeaningful,
+} from './dependency-guards'
+import { equals, mayBeGreater, lower } from './dependency-version-compare'
 import {
   MaxVersions,
   MeaningfulDependency,
   PackageJson,
   WrongDependencies,
 } from './shared-types'
-import { MAX_VERSIONS } from './constants'
-import { equals, mayBeGreater, lower } from './dependency-version-compare'
-import {
-  isDependencyLimited,
-  isDependencyMeaningful,
-} from './dependency-guards'
 
 interface Params {
   packageJson: PackageJson

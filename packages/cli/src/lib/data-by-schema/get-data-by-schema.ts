@@ -6,14 +6,14 @@ import {
   PackageManager,
 } from '../shared-types'
 import { checkIfTsShouldBeUsed } from './check-if-ts-should-be-used'
-import { findPackageJson } from './find-package-json'
-import { getInstalledDependencies } from './get-installed-dependencies'
 import { findEslintConfig } from './find-eslint-config'
-import { getInstalledConfings } from './get-installed-configs'
-import { getPackageManager } from './get-package-manager'
+import { findPackageJson } from './find-package-json'
 import { findPrettierConfig } from './find-prettier-config'
-import { getRootDirFileNames } from './get-root-dir-file-names'
+import { getInstalledConfings } from './get-installed-configs'
+import { getInstalledDependencies } from './get-installed-dependencies'
+import { getPackageManager } from './get-package-manager'
 import { getRootDir } from './get-root-dir'
+import { getRootDirFileNames } from './get-root-dir-file-names'
 
 class DataAcquiringError extends Error {}
 

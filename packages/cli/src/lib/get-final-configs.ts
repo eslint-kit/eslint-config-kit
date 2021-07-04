@@ -1,5 +1,5 @@
-import { Config, PackageJson } from './shared-types'
 import { getMajor, greaterOrEquals } from './dependency-version-compare'
+import { Config, PackageJson } from './shared-types'
 
 function reactCompatible(version?: string): boolean {
   if (!version) {

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { mocked } from 'ts-jest/utils'
 import { NpmRunner } from '../runners'
 import { NpmPackageManager } from './npm.package-manager'

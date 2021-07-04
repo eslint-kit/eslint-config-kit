@@ -1,13 +1,13 @@
-import ora from 'ora'
 import chalk from 'chalk'
 import program from 'commander'
+import ora from 'ora'
+import { MAX_VERSIONS } from './constants'
+import { NpmPackageManager, YarnPackageManager } from './package-managers'
 import {
   MaxVersions,
   MeaningfulDependency,
   PackageManager,
 } from './shared-types'
-import { NpmPackageManager, YarnPackageManager } from './package-managers'
-import { MAX_VERSIONS } from './constants'
 import { MESSAGES } from './ui/messages'
 import { log } from './util/log'
 

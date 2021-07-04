@@ -1,5 +1,5 @@
-import { Config } from '../shared-types'
 import { DEPENDENCIES } from '../constants'
+import { Config } from '../shared-types'
 
 interface Params {
   installedDependencies: string[]

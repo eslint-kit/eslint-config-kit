@@ -1,5 +1,5 @@
-import { Config, MeaningfulDependency } from './shared-types'
 import { CONFIG_PREFIX } from './constants'
+import { Config, MeaningfulDependency } from './shared-types'
 
 export function isFromConfigKit(fullConfigName: string): boolean {
   return fullConfigName.startsWith(CONFIG_PREFIX)

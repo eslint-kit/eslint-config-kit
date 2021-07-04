@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 import nanoid from 'nanoid'
 
 function isPromise(value: any): boolean {

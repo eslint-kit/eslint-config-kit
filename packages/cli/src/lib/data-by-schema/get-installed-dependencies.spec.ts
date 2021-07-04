@@ -1,5 +1,5 @@
-import { PackageJson } from '../shared-types'
 import { DEPENDENCIES } from '../constants'
+import { PackageJson } from '../shared-types'
 import { getInstalledDependencies } from './get-installed-dependencies'
 
 describe('getInstalledDependencies', () => {

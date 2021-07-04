@@ -1,9 +1,9 @@
 import chalk from 'chalk'
-import { getDataBySchema } from '../../lib/data-by-schema'
-import { log } from '../../lib/util/log'
-import { MESSAGES } from '../../lib/ui/messages'
-import { upgradeDependenciesToLatest } from '../../lib/dependencies-work'
 import { toConfigPackage } from '../../lib/config-name-helpers'
+import { getDataBySchema } from '../../lib/data-by-schema'
+import { upgradeDependenciesToLatest } from '../../lib/dependencies-work'
+import { MESSAGES } from '../../lib/ui/messages'
+import { log } from '../../lib/util/log'
 import { LOCAL_MESSAGES } from './ui/local-messages'
 
 export class UpgradeAction {

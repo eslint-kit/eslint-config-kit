@@ -1,11 +1,11 @@
 import program from 'commander'
-import { EslintConfigMeta, Json, Config } from '../../lib/shared-types'
 import { isFromConfigKit, toConfigName } from '../../lib/config-name-helpers'
 import {
   CONFIG_PRIORITIES,
   CONFIG_PREFIX,
   DEPENDENCIES,
 } from '../../lib/constants'
+import { EslintConfigMeta, Json, Config } from '../../lib/shared-types'
 
 function byPriority(a: string, b: string): number {
   if (!isFromConfigKit(a) || !isFromConfigKit(b)) {

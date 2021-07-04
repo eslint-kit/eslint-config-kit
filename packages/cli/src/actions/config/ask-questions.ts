@@ -1,5 +1,5 @@
-import inquirer from 'inquirer'
 import chalk from 'chalk'
+import inquirer from 'inquirer'
 import { Config, PrettierConfigMeta, Choice } from '../../lib/shared-types'
 import { toMap } from '../../lib/util/to-map'
 import { Answers } from './types'

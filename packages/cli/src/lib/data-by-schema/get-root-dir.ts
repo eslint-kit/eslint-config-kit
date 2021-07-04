@@ -1,6 +1,6 @@
-import path from 'path'
 import program from 'commander'
 import glob from 'glob-promise'
+import path from 'path'
 import { PackageJson } from '../shared-types'
 import { MESSAGES } from '../ui/messages'
 import { findPackageJson } from './find-package-json'

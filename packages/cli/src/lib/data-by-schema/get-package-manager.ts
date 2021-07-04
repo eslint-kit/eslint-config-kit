@@ -1,8 +1,8 @@
-import inquirer from 'inquirer'
 import program from 'commander'
+import inquirer from 'inquirer'
+import { FileSystemReader } from '../readers'
 import { PackageManager, Choice } from '../shared-types'
 import { MESSAGES } from '../ui/messages'
-import { FileSystemReader } from '../readers'
 
 interface PackageManagerChoice extends Choice {
   value: PackageManager

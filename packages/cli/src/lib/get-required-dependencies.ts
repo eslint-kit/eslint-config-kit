@@ -1,8 +1,8 @@
 /* eslint-disable sonarjs/cognitive-complexity */
+import { toConfigPackage } from './config-name-helpers'
+import { DEPENDENCIES } from './constants'
 import { MeaningfulDependency, Config } from './shared-types'
 import { toMap } from './util/to-map'
-import { DEPENDENCIES } from './constants'
-import { toConfigPackage } from './config-name-helpers'
 
 interface Params {
   installedDependencies: string[]

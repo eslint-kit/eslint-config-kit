@@ -1,7 +1,7 @@
 import path from 'path'
 import { FILENAMES } from '../constants'
-import { PackageJson } from '../shared-types'
 import { FileSystemReader } from '../readers'
+import { PackageJson } from '../shared-types'
 
 interface Params {
   rootDir?: string
