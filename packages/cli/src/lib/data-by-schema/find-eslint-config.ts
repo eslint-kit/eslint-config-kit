@@ -1,5 +1,5 @@
-import YAML from 'yamljs'
 import path from 'path'
+import YAML from 'yamljs'
 import { FILENAMES } from '../constants'
 import { FileSystemReader } from '../readers'
 import { Json, EslintConfigMeta, PackageJson } from '../shared-types'

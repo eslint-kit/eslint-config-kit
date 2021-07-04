@@ -5,7 +5,6 @@
   "quoteProps": "consistent",
   "endOfLine": "lf",
   "importOrder": [
-    "^(child_process|crypto|events|fs|http|https|os|path)(\/(.*))?$",
     "^@app(\/(.*))?$",
     "^[./]"
   ]

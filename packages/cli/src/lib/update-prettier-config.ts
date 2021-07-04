@@ -1,5 +1,5 @@
-import YAML from 'yamljs'
 import path from 'path'
+import YAML from 'yamljs'
 import { FileSystemReader } from './readers'
 import { PrettierConfigMeta, PrettierConfig } from './shared-types'
 
