@@ -1,0 +1,7 @@
+- match:
+  dependency_name: "@typescript-eslint/eslint-plugin"
+  update_type: "all"
+
+- match:
+  dependency_name: "@typescript-eslint/parser"
+  update_type: "all"

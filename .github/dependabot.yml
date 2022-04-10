@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/packages/eslint-config-typescript"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "@typescript-eslint/eslint-plugin"
+        dependency-type: "production"
+      - dependency-name: "@typescript-eslint/parser"
+        dependency-type: "production"

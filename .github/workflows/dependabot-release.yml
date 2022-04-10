@@ -1,0 +1,73 @@
+name: Dependabot release
+
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - 'packages/eslint-config-typescript/package.json'
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true && github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        with:
+          github-token: '${{ secrets.GITHUB_TOKEN }}'
+      
+      - name: Check dependencies
+        id: check
+        if: ${{contains(steps.metadata.outputs.dependency-names, '@typescript-eslint/eslint-plugin') || contains(steps.metadata.outputs.dependency-names, '@typescript-eslint/parser')}}
+      
+      - name: Get version
+        id: get_version
+        if: steps.check.outcome == 'success'
+        uses: martinbeentjes/npm-get-version-action@master
+        with:
+          path: 'packages/eslint-config-typescript'
+
+      - name: Bump version
+        id: bump_version
+        if: steps.check.outcome == 'success'
+        uses: christian-draeger/increment-semantic-version@1.0.2
+        with:
+          current-version: '${{ steps.get_version.outputs.current-version }}'
+          version-fragment: 'feature'
+
+      - name: Set version
+        if: steps.check.outcome == 'success'
+        uses: reedyuk/npm-version@1.1.1
+        with:
+          version: '${{ steps.bump_version.outputs.next-version }}'
+          package: 'packages/eslint-config-typescript'
+
+      - name: Create NPM config
+        if: steps.check.outcome == 'success'
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to NPM
+        if: steps.check.outcome == 'success'
+        run: cd packages/eslint-config-typescript && npm publish
+
+      - name: Commit & Push
+        if: steps.check.outcome == 'success'
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: 'packages/eslint-config-typescript'
+          message: 'ci: auto bump version'
+          tag: '@eslint-kit/eslint-config-typescript@${{ steps.bump_version.outputs.next-version }}'
+          commit: --no-verify
+          push: true
+
+      - name: Create GitHub release
+        if: steps.check.outcome == 'success'
+        uses: ncipollo/release-action@v1
+        with:
+          tag: '@eslint-kit/eslint-config-typescript@${{ steps.bump_version.outputs.next-version }}'
+          body: 'A version bump after automatic @eslint-kit/typescript config dependency update'
+          token: ${{ secrets.GITHUB_TOKEN }}
