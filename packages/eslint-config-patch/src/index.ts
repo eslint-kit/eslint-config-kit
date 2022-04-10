@@ -1,3 +1,7 @@
 require('@rushstack/eslint-patch/modern-module-resolution')
 
-export default {}
+export default {
+  env: {
+    es6: true,
+  }
+}

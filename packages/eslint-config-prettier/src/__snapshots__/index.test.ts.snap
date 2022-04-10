@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@eslint-kit/prettier should match snapshots 1`] = `Array []`;
+
+exports[`@eslint-kit/prettier should match snapshots 2`] = `Array []`;

@@ -3,13 +3,14 @@
   "version": "3.0.0",
   "main": "build/index.js",
   "scripts": {
-    "build": "rollup --config rollup.config.js"
+    "build": "rollup --config rollup.config.js",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "eslint-plugin-react": "7.23.2",
-    "eslint-plugin-react-hooks": "4.2.0"
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-react-hooks": "4.3.0"
   },
   "peerDependencies": {
-    "eslint": "^5.16.0 || ^6.8.0 || ^7.2.0"
+    "eslint": "^8.9.0"
   }
 }

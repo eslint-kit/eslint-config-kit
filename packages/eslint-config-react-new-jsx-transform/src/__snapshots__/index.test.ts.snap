@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@eslint-kit/eact-new-jsx-transform should match snapshots 1`] = `Array []`;

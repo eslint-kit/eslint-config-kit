@@ -1,8 +1,10 @@
 export default {
   env: {
+    es6: true,
     browser: true,
   },
   parserOptions: {
+    sourceType: "module",
     ecmaFeatures: {
       jsx: true,
     },

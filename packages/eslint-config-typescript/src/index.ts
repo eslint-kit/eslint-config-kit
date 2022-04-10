@@ -1,8 +1,12 @@
 import { extensions, importRules } from '../../../shared'
 
 export default {
-  plugins: ['@typescript-eslint'],
+  plugins: ['import', '@typescript-eslint'],
+  env: {
+    es6: true,
+  },
   parserOptions: {
+    sourceType: "module",
     project: 'tsconfig.json',
     createDefaultProgram: true,
     tsconfigRootDir: './',
