@@ -6,8 +6,9 @@ describe('@eslint-kit/node', () => {
     await testConfig({
       config,
       files: [
-        'env-clear.js'
-      ]
+        'env-clear'
+      ],
+      extension: 'js'
     })
   })
 })

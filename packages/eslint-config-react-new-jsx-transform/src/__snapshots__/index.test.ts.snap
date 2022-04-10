@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@eslint-kit/eact-new-jsx-transform should match snapshots 1`] = `Array []`;
+exports[`@eslint-kit/eact-new-jsx-transform should match snapshots 1`] = `
+Array [
+  Object {
+    "errorCount": 0,
+    "filePath": "<text>",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": Array [],
+    "usedDeprecatedRules": Array [],
+    "warningCount": 0,
+  },
+]
+`;
