@@ -25,6 +25,7 @@ jobs:
       - name: Check dependencies
         id: check
         if: ${{contains(steps.metadata.outputs.dependency-names, '@typescript-eslint/eslint-plugin') || contains(steps.metadata.outputs.dependency-names, '@typescript-eslint/parser')}}
+        run: echo Check passed
       
       - name: Get version
         id: get_version
