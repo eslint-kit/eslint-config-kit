@@ -1,7 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@eslint-kit/react should match snapshots 1`] = `Array []`;
+exports[`@eslint-kit/react should match snapshots 1`] = `
+Array [
+  Object {
+    "errorCount": 0,
+    "filePath": "<text>",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": Array [],
+    "usedDeprecatedRules": Array [],
+    "warningCount": 0,
+  },
+]
+`;
 
-exports[`@eslint-kit/react should match snapshots 2`] = `Array []`;
+exports[`@eslint-kit/react should match snapshots 2`] = `
+Array [
+  Object {
+    "errorCount": 0,
+    "filePath": "<text>",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": Array [
+      Object {
+        "column": 13,
+        "endColumn": 23,
+        "endLine": 4,
+        "line": 4,
+        "message": "Must use destructuring props assignment",
+        "messageId": "useDestructAssignment",
+        "nodeType": "MemberExpression",
+        "ruleId": "react/destructuring-assignment",
+        "severity": 1,
+      },
+    ],
+    "source": "import React from 'react'
 
-exports[`@eslint-kit/react should match snapshots 3`] = `Array []`;
+export const Component = (props) => {
+  return <>{props.text}</>
+}
+",
+    "usedDeprecatedRules": Array [],
+    "warningCount": 1,
+  },
+]
+`;
+
+exports[`@eslint-kit/react should match snapshots 3`] = `
+Array [
+  Object {
+    "errorCount": 1,
+    "filePath": "<text>",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": Array [
+      Object {
+        "column": 13,
+        "endColumn": 15,
+        "endLine": 1,
+        "line": 1,
+        "message": "'React' must be in scope when using JSX",
+        "messageId": "notInScope",
+        "nodeType": "JSXOpeningFragment",
+        "ruleId": "react/react-in-jsx-scope",
+        "severity": 2,
+      },
+    ],
+    "source": "const jsx = <>Foo</>
+export { jsx }
+",
+    "usedDeprecatedRules": Array [],
+    "warningCount": 0,
+  },
+]
+`;

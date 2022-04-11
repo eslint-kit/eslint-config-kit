@@ -4,7 +4,7 @@ exports[`@eslint-kit/typescript should match snapshots 1`] = `
 Array [
   Object {
     "errorCount": 0,
-    "filePath": "/Users/risenforces/Desktop/Projects/eslint-kit/packages/eslint-config-typescript/tests/basic-clear.ts",
+    "filePath": "<PROJECT_ROOT>/tests/basic-clear.ts",
     "fixableErrorCount": 0,
     "fixableWarningCount": 0,
     "messages": Array [],
@@ -18,7 +18,7 @@ exports[`@eslint-kit/typescript should match snapshots 2`] = `
 Array [
   Object {
     "errorCount": 0,
-    "filePath": "/Users/risenforces/Desktop/Projects/eslint-kit/packages/eslint-config-typescript/tests/basic-warn.ts",
+    "filePath": "<PROJECT_ROOT>/tests/basic-warn.ts",
     "fixableErrorCount": 0,
     "fixableWarningCount": 1,
     "messages": Array [
@@ -66,7 +66,7 @@ exports[`@eslint-kit/typescript should match snapshots 3`] = `
 Array [
   Object {
     "errorCount": 1,
-    "filePath": "/Users/risenforces/Desktop/Projects/eslint-kit/packages/eslint-config-typescript/tests/basic-error.ts",
+    "filePath": "<PROJECT_ROOT>/tests/basic-error.ts",
     "fixableErrorCount": 1,
     "fixableWarningCount": 0,
     "messages": Array [

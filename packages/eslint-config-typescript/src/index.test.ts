@@ -9,10 +9,11 @@ describe('@eslint-kit/typescript', () => {
         parser: '@typescript-eslint/parser'
       },
       files: [
-        'basic-clear.ts',
-        'basic-warn.ts',
-        'basic-error.ts'
-      ]
+        'basic-clear',
+        'basic-warn',
+        'basic-error'
+      ],
+      extension: 'ts'
     })
   })
 })

@@ -6,9 +6,10 @@ describe('@eslint-kit/prettier', () => {
     await testConfig({
       config,
       files: [
-        'basic-clear.js',
-        'basic-warn.js'
-      ]
+        'basic-clear',
+        'basic-warn'
+      ],
+      extension: 'js'
     })
   })
 })

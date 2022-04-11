@@ -6,8 +6,9 @@ describe('@eslint-kit/eact-new-jsx-transform', () => {
     await testConfig({
       config,
       files: [
-        'basic-clear.js'
-      ]
+        'basic-clear'
+      ],
+      extension: 'js'
     })
   })
 })

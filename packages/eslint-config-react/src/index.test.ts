@@ -6,10 +6,11 @@ describe('@eslint-kit/react', () => {
     await testConfig({
       config,
       files: [
-        'basic-clear.js',
-        'basic-warn.js',
-        'basic-error.js'
-      ]
+        'basic-clear',
+        'basic-warn',
+        'basic-error'
+      ],
+      extension: 'js'
     })
   })
 })
