@@ -1,0 +1,28 @@
+name: @eslint-kit/typescript Auto-Update Release
+
+on:
+  pull_request:
+    types:
+      - closed
+    paths:
+      - 'packages/eslint-config-typescript/package.json'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true && github.actor == 'renovate[bot]' && github.event.pull_request.head.ref == 'renovate/auto-update-typescript-config'  }}
+    steps:
+      - name: Create NPM config
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to NPM
+        run: cd packages/eslint-config-typescript && npm publish
+
+      - name: Create GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: '@eslint-kit/eslint-config-typescript@${{ steps.bump_version.outputs.next-version }}'
+          body: 'Automatic dependency update for @eslint-kit/typescript config'
+          token: ${{ secrets.GITHUB_TOKEN }}
