@@ -14,7 +14,7 @@
       "commitMessageAction": "auto update @typescript-eslint dependencies",
       "commitMessageTopic": null,
       "commitMessageExtra": null,
-      "schedule": "0 */8 * * *"
+      "schedule": "* */8 * * *"
     }
   ]
 }
