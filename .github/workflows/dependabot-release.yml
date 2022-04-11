@@ -1,5 +1,9 @@
 name: Dependabot release
 
+concurrency:
+  group: dependabot_release
+  cancel-in-progress: true
+
 on:
   pull_request:
     types:
