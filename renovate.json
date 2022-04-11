@@ -1,6 +1,10 @@
 {
   "packageRules": [
     {
+      "matchPackagePatterns": ["*"],
+      "enabled": false
+    },
+    {
       "groupName": "auto-update @eslint-kit/typescript",
       "groupSlug": "auto-update-typescript-config",
       "matchPackageNames": [
@@ -8,6 +12,7 @@
         "@typescript-eslint/parser"
       ],
       "matchFiles": ["packages/eslint-config-typescript/package.json"],
+      "enabled": true,
       "labels": ["dependencies", "auto update"],
       "automerge": true,
       "bumpVersion": "minor",
