@@ -1,4 +1,4 @@
-name: @eslint-kit/typescript Auto-Update Release
+name: Typescript Config Auto-Update Release
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == true && github.actor == 'renovate[bot]' && github.event.pull_request.head.ref == 'renovate/auto-update-typescript-config'  }}
+    if: ${{ github.event.pull_request.merged == true && github.actor == 'renovate[bot]' && github.event.pull_request.head.ref == 'renovate/auto-update-typescript-config' }}
     steps:
       - name: Create NPM config
         run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
