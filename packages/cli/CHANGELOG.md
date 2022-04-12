@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 8.1.0
+
+### Minor Changes
+
+- f132120: update prettier config dependencies
+
 ## 8.0.1
 
 ### Patch Changes
