@@ -4,6 +4,7 @@ exports[`@eslint-kit/react should match snapshots 1`] = `
 Array [
   Object {
     "errorCount": 0,
+    "fatalErrorCount": 0,
     "filePath": "<text>",
     "fixableErrorCount": 0,
     "fixableWarningCount": 0,
@@ -18,6 +19,7 @@ exports[`@eslint-kit/react should match snapshots 2`] = `
 Array [
   Object {
     "errorCount": 0,
+    "fatalErrorCount": 0,
     "filePath": "<text>",
     "fixableErrorCount": 0,
     "fixableWarningCount": 0,
@@ -50,6 +52,7 @@ exports[`@eslint-kit/react should match snapshots 3`] = `
 Array [
   Object {
     "errorCount": 1,
+    "fatalErrorCount": 0,
     "filePath": "<text>",
     "fixableErrorCount": 0,
     "fixableWarningCount": 0,

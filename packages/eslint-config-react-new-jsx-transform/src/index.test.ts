@@ -1,7 +1,7 @@
 import { testConfig } from '../../../shared/testing'
 import config from './index'
 
-describe('@eslint-kit/eact-new-jsx-transform', () => {
+describe('@eslint-kit/react-new-jsx-transform', () => {
   it('should match snapshots', async () => {
     await testConfig({
       config,

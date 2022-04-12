@@ -9,7 +9,7 @@ describe('getWrongDependencies', () => {
         packageJson: {
           dependencies: {
             'eslint': '1.0.0',
-            '@typescript-eslint/parser': '^2.2.2',
+            '@typescript-eslint/parser': '^3.2.2',
           },
           devDependencies: {
             '@eslint-kit/eslint-config-base': '3.3.3',
@@ -24,15 +24,15 @@ describe('getWrongDependencies', () => {
         ],
         maxVersions: {
           'eslint': '1.1.1',
-          '@typescript-eslint/parser': '2.2.2',
+          '@typescript-eslint/parser': null,
           '@eslint-kit/eslint-config-base': null,
         } as MaxVersions,
       })
     ).toEqual({
-      notEqual: ['eslint', '@typescript-eslint/parser'],
+      notEqual: ['eslint'],
       tooLow: ['eslint'],
-      tooHigh: ['@typescript-eslint/parser'],
-      total: 2,
+      tooHigh: [],
+      total: 1,
     })
   })
 })

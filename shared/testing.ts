@@ -13,6 +13,7 @@ export async function testConfig({ config, files, extension }: Options) {
     baseConfig: config as Linter.Config<Linter.RulesRecord>,
     useEslintrc: false,
     cwd: path.resolve(process.cwd(), '../..'),
+    ignore: false,
   })
 
   for (const file of files) {

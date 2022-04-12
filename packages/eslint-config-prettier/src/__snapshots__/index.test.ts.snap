@@ -4,6 +4,7 @@ exports[`@eslint-kit/prettier should match snapshots 1`] = `
 Array [
   Object {
     "errorCount": 0,
+    "fatalErrorCount": 0,
     "filePath": "<text>",
     "fixableErrorCount": 0,
     "fixableWarningCount": 0,
@@ -18,6 +19,7 @@ exports[`@eslint-kit/prettier should match snapshots 2`] = `
 Array [
   Object {
     "errorCount": 0,
+    "fatalErrorCount": 0,
     "filePath": "<text>",
     "fixableErrorCount": 0,
     "fixableWarningCount": 1,
