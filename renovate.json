@@ -16,7 +16,7 @@
       "labels": ["dependencies", "auto update"],
       "automerge": true,
       "bumpVersion": "minor",
-      "commitMessageAction": "auto update @typescript-eslint dependencies",
+      "commitMessageAction": null,
       "commitMessageTopic": null,
       "commitMessageExtra": null
     }
