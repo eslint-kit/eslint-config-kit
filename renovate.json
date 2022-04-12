@@ -18,8 +18,7 @@
       "bumpVersion": "minor",
       "commitMessageAction": "auto update @typescript-eslint dependencies",
       "commitMessageTopic": null,
-      "commitMessageExtra": null,
-      "schedule": "* */8 * * *"
+      "commitMessageExtra": null
     }
   ]
 }
