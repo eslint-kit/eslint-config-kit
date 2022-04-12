@@ -6,14 +6,10 @@ describe('@eslint-kit/typescript', () => {
     await testConfig({
       config: {
         ...config,
-        parser: '@typescript-eslint/parser'
+        parser: '@typescript-eslint/parser',
       },
-      files: [
-        'basic-clear',
-        'basic-warn',
-        'basic-error'
-      ],
-      extension: 'ts'
+      files: ['basic-clear', 'basic-warn', 'basic-error'],
+      extension: 'ts',
     })
   })
 })

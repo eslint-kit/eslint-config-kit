@@ -6,25 +6,27 @@ interface Params {
   rootDir: string
 }
 
-// function withNesting(regex: string): string {
-//   return regex + '(\\/(.*))?$'
-// }
+function withNesting(regex: string): string {
+  return regex + '(\\/(.*))?$'
+}
 
-// const builtInNodeModulesString = [
-//   'child_process',
-//   'crypto',
-//   'events',
-//   'fs',
-//   'http',
-//   'https',
-//   'os',
-//   'path',
-// ].join('|')
-
-// const buildInNodeModulesRegex = withNesting(`^(${builtInNodeModulesString})`)
+const builtInNodeModulesString = [
+  'child_process',
+  'crypto',
+  'events',
+  'fs',
+  'http',
+  'https',
+  'os',
+  'path',
+].join('|')
 
 const importOrder = [
-  // buildInNodeModulesRegex,
+  withNesting(`^(${builtInNodeModulesString})`),
+  '<THIRD_PARTY_MODULES>',
+  withNesting('^~'),
+  withNesting('^@'),
+  withNesting('^@app'),
   '^[./]',
 ]
 

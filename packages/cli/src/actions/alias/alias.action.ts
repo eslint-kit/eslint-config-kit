@@ -107,6 +107,8 @@ export class AliasAction {
     try {
       await AliasAction.process()
     } catch (error) {
+      const isError = error instanceof Error
+      if (!isError) return
       log(error.message, chalk.red)
     }
   }

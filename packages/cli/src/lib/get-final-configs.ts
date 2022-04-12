@@ -18,6 +18,7 @@ function reactCompatible(version?: string): boolean {
     return true
   }
 
+  // eslint-disable-next-line sonarjs/prefer-single-boolean-return
   if (getMajor(version) === 17 && greaterOrEquals(version, '17.0.0')) {
     return true
   }

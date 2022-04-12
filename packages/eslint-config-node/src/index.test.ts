@@ -5,10 +5,8 @@ describe('@eslint-kit/node', () => {
   it('should match snapshots', async () => {
     await testConfig({
       config,
-      files: [
-        'env-clear'
-      ],
-      extension: 'js'
+      files: ['env-clear'],
+      extension: 'js',
     })
   })
 })

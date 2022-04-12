@@ -61,6 +61,8 @@ export class UpgradeAction {
     try {
       await UpgradeAction.process()
     } catch (error) {
+      const isError = error instanceof Error
+      if (!isError) return
       log(error.message, chalk.red)
     }
   }

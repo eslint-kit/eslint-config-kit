@@ -112,6 +112,8 @@ export class ConfigAction {
     try {
       await ConfigAction.process()
     } catch (error) {
+      const isError = error instanceof Error
+      if (!isError) return
       log(error.message, chalk.red)
     }
   }

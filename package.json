@@ -52,7 +52,7 @@
     "commitizen": "^4.2.4",
     "commitlint-config-cz": "^0.13.2",
     "cz-customizable": "^6.3.0",
-    "eslint": "7.26.0",
+    "eslint": "7.32.0",
     "eslint-plugin-prettier": "^3.1.2",
     "execa": "^4.0.2",
     "find": "^0.3.0",

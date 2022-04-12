@@ -4,7 +4,7 @@ export default {
     browser: true,
   },
   parserOptions: {
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },

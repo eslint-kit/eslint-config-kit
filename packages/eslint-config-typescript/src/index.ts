@@ -6,7 +6,7 @@ export default {
     es6: true,
   },
   parserOptions: {
-    sourceType: "module",
+    sourceType: 'module',
     project: 'tsconfig.json',
     createDefaultProgram: true,
     tsconfigRootDir: './',

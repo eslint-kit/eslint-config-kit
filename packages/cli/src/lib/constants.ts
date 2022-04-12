@@ -24,9 +24,9 @@ export const CONFIG_PRIORITIES: Record<Config, number> = {
 }
 
 export const MAX_VERSIONS: MaxVersions = {
-  'eslint': '7.10.0',
+  'eslint': '7.32.0',
   'babel-eslint': '10.1.0',
-  '@typescript-eslint/parser': '4.15.0',
+  '@typescript-eslint/parser': null,
   'eslint-import-resolver-alias': '1.1.2',
   'eslint-import-resolver-typescript': '2.3.0',
   'prettier': '2.3.0',
