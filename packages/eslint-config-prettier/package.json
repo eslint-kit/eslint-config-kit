@@ -1,6 +1,6 @@
 {
   "name": "@eslint-kit/eslint-config-prettier",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config rollup.config.js",

@@ -1,5 +1,11 @@
 # @eslint-kit/eslint-config-prettier
 
+## 5.0.0
+
+### Major Changes
+
+- f132120: update prettier config dependencies
+
 ## 4.0.0
 
 ### Major Changes
