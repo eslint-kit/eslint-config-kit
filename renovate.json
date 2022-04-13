@@ -13,7 +13,7 @@
       ],
       "matchFiles": ["packages/eslint-config-typescript/package.json"],
       "enabled": true,
-      "schedule": ["0 */4 * * *"],
+      "schedule": ["* */4 * * *"],
       "labels": ["dependencies", "auto update"],
       "automerge": true,
       "bumpVersion": "minor",
