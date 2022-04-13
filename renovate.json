@@ -13,6 +13,7 @@
       ],
       "matchFiles": ["packages/eslint-config-typescript/package.json"],
       "enabled": true,
+      "schedule": ["every 4 hours"],
       "labels": ["dependencies", "auto update"],
       "automerge": true,
       "bumpVersion": "minor",
