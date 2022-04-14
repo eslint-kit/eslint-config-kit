@@ -7,7 +7,7 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "5.18.0",
+    "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1"
   },
   "peerDependencies": {
