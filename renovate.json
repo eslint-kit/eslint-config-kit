@@ -18,6 +18,7 @@
       "schedule": ["* */4 * * *"],
       "labels": ["dependencies", "auto update"],
       "automerge": true,
+      "automergeType": "branch",
       "bumpVersion": "minor",
       "commitMessageAction": null,
       "commitMessageTopic": null,
