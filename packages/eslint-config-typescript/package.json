@@ -1,14 +1,14 @@
 {
   "name": "@eslint-kit/eslint-config-typescript",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config rollup.config.js",
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "5.12.1",
-    "@typescript-eslint/parser": "5.12.1"
+    "@typescript-eslint/eslint-plugin": "5.19.0",
+    "@typescript-eslint/parser": "5.19.0"
   },
   "peerDependencies": {
     "eslint": "^8.9.0"
