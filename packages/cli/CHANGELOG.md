@@ -1,5 +1,11 @@
 # @eslint-kit/cli
 
+## 8.2.0
+
+### Minor Changes
+
+- a094734: Update eslint max version
+
 ## 8.1.0
 
 ### Minor Changes
